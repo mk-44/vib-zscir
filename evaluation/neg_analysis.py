@@ -106,6 +106,8 @@ def load_model_from_checkpoint(spec: CheckpointSpec, device: str = "cuda"):
         num_tokens   = num_tokens,
         merge_tokens = merge_tokens,
         merge_type   = merge_type,
+        # Forward-pass edit z <- rho*z/||z|| of unit-norm runs must also apply at test; absent/0.0 = off.
+        pseudo_norm  = ckpt_cfg.get("pseudo_norm", 0.0),
         device       = device,
     )
 
@@ -207,6 +209,10 @@ def compute_metrics_for_batch(model, imgs, ls_value, device):
 
     if model.merger is not None:
         pseudo = model.merger(pseudo)
+
+    # Same fixed-norm projection as Pic2Word.encode_query (unit-norm runs); no-op when 0.0.
+    if model.pseudo_norm > 0:
+        pseudo = F.normalize(pseudo, dim=-1) * model.pseudo_norm
 
     # v = normalized CLIP image embedding (retrieval target)
     v = F.normalize(v_raw, dim=-1)

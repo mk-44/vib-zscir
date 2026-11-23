@@ -86,6 +86,9 @@ def eval_reconstruction(model: Pic2Word, val_loader, device: str, k_vals: list =
             pseudo_tokens = model.mapper(v_raw)
         if model.merger is not None:
             pseudo_tokens = model.merger(pseudo_tokens)
+        # Same fixed-norm projection as Pic2Word.forward/encode_query (unit-norm runs); no-op when 0.0.
+        if model.pseudo_norm > 0:
+            pseudo_tokens = F.normalize(pseudo_tokens, dim=-1) * model.pseudo_norm
         v                = F.normalize(v_raw, dim=-1)
         tok_emb, eot_pos = model._build_token_sequence(pseudo_tokens)
         p                = model.clip.forward_text_transform(tok_emb, eot_pos)
@@ -183,6 +186,9 @@ def _run_analysis(model: Pic2Word, cfg: Config, preprocess, val_loader) -> dict:
                 pseudo_tokens = model.mapper(v_raw)
             if model.merger is not None:
                 pseudo_tokens = model.merger(pseudo_tokens)
+            # Same fixed-norm projection as Pic2Word.forward/encode_query (unit-norm runs); no-op when 0.0.
+            if model.pseudo_norm > 0:
+                pseudo_tokens = F.normalize(pseudo_tokens, dim=-1) * model.pseudo_norm
             v                = F.normalize(v_raw, dim=-1)
             tok_emb, eot_pos = model._build_token_sequence(pseudo_tokens)
             p                = model.clip.forward_text_transform(tok_emb, eot_pos)

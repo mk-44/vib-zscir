@@ -118,7 +118,9 @@ def load_model(ckpt_path):
         merge_tokens=cc.get('merge_tokens',None), merge_type=cc.get('merge_type','learned'),
         max_token_len=77, clip_prompt=cc.get('clip_prompt','a photo of'),
         vib_logvar_bias=cc.get('vib_logvar_bias',-2.0),
-        vib_logvar_clip_max=cc.get('vib_logvar_clip_max',2.0), device=DEVICE,
+        vib_logvar_clip_max=cc.get('vib_logvar_clip_max',2.0),
+        # Forward-pass edit z <- rho*z/||z|| of unit-norm runs must also apply at test; absent/0.0 = off.
+        pseudo_norm=cc.get('pseudo_norm',0.0), device=DEVICE,
     )
     m = Pic2Word(cfg).to(DEVICE)
     m.mapper.load_state_dict(ck['mapper_state'])
@@ -148,6 +150,8 @@ def compute_metrics(model, batch, ls):
     v_raw = batch.to(DEVICE).float()
     pseudo = model.mapper(v_raw)
     if model.merger is not None: pseudo = model.merger(pseudo)
+    # Same fixed-norm projection as Pic2Word.encode_query (unit-norm runs); no-op when 0.0.
+    if model.pseudo_norm > 0: pseudo = F.normalize(pseudo, dim=-1) * model.pseudo_norm
     v = F.normalize(v_raw, dim=-1)
     tok_emb, eot_pos = model._build_token_sequence(pseudo)
     p = model.clip.forward_text_transform(tok_emb, eot_pos)

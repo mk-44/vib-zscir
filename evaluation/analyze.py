@@ -66,6 +66,8 @@ def load_model(checkpoint_path: str, device: str):
         clip_prompt     = ckpt_cfg.get("clip_prompt",     "a photo of"),
         vib_logvar_bias = ckpt_cfg.get("vib_logvar_bias", -2.0),
         vib_logvar_clip_max = ckpt_cfg.get("vib_logvar_clip_max",  2.0),
+        # Forward-pass edit z <- rho*z/||z|| of unit-norm runs must also apply at test; absent/0.0 = off.
+        pseudo_norm     = ckpt_cfg.get("pseudo_norm",     0.0),
         device          = device,
     )
 
@@ -259,6 +261,10 @@ def check_cc12m_reconstruction(model      : Pic2Word,
 
         if model.merger is not None:
             pseudo_tokens = model.merger(pseudo_tokens)
+
+        # Same fixed-norm projection as Pic2Word.encode_query (unit-norm runs); no-op when 0.0.
+        if model.pseudo_norm > 0:
+            pseudo_tokens = F.normalize(pseudo_tokens, dim=-1) * model.pseudo_norm
 
         v       = F.normalize(v_raw, dim=-1)
         tok_emb, eot_pos = model._build_token_sequence(pseudo_tokens)

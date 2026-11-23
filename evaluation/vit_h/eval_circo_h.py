@@ -106,6 +106,8 @@ def load_model(checkpoint_path: Path, device: str):
         clip_prompt         = ckpt_cfg.get('clip_prompt',         'a photo of'),
         vib_logvar_bias     = ckpt_cfg.get('vib_logvar_bias',     -2.0),
         vib_logvar_clip_max = ckpt_cfg.get('vib_logvar_clip_max',  2.0),
+        # Forward-pass edit z <- rho*z/||z|| of unit-norm runs must also apply at test; absent/0.0 = off.
+        pseudo_norm         = ckpt_cfg.get('pseudo_norm',          0.0),
         clip_backend        = ckpt_cfg.get('clip_backend',        'open_clip'),
         clip_pretrained     = ckpt_cfg.get('clip_pretrained',     None),
         device              = device,

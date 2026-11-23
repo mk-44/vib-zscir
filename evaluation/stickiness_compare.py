@@ -240,6 +240,8 @@ def queries_ours(ckpt_path, circo_data_path, device, split):
                          hidden_dim=cc.get('hidden_dim', 256),
                          num_tokens=cc.get('num_tokens', 1),
                          clip_prompt=cc.get('clip_prompt', 'a photo of'),
+                         # unit-norm runs: z <- rho*z/||z|| also at test; absent/0.0 = off
+                         pseudo_norm=cc.get('pseudo_norm', 0.0),
                          device=device)
     model = Pic2Word(cfg).to(device).eval()
     model.mapper.load_state_dict(ckpt['mapper_state'])
