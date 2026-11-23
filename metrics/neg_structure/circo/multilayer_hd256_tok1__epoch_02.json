@@ -1,0 +1,6 @@
+{
+  "checkpoint": "/notebooks/experiment/checkpoints_1500k_trainable_ls/multilayer_hd256_tok1/epoch_02.pt",
+  "skipped": true,
+  "mapper_type": "multilayer",
+  "skipped_reason": "needs_intermediate_features"
+}

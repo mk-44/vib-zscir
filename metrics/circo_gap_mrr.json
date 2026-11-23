@@ -1,0 +1,32 @@
+{
+  "Baseline": {
+    "n_queries": 220,
+    "gap_mean": -0.05495733225887472,
+    "gap_mean_sem": 0.00210208571299405,
+    "mrr": 0.2557798322747108,
+    "gap_best": -0.0316891191357916,
+    "gap_best_sem": 0.002123485671573057,
+    "median_best_gt_rank": 10.0,
+    "mean_best_gt_rank": 153.36363636363637,
+    "gt_top1_rate": 0.1409090909090909,
+    "hardest_distractor_cos": 0.3176583246751265,
+    "query_reference_cos": 0.3288067592815919,
+    "query_target_cos": 0.2627009924162518,
+    "ref_target_margin": 0.06610576686534014
+  },
+  "VIB": {
+    "n_queries": 220,
+    "gap_mean": -0.046264801783995196,
+    "gap_mean_sem": 0.0018787751150784867,
+    "mrr": 0.2565025510848333,
+    "gap_best": -0.026694872907616875,
+    "gap_best_sem": 0.0018190907667132205,
+    "median_best_gt_rank": 17.0,
+    "mean_best_gt_rank": 92.49090909090908,
+    "gt_top1_rate": 0.16818181818181818,
+    "hardest_distractor_cos": 0.29658196290785616,
+    "query_reference_cos": 0.29029019007628615,
+    "query_target_cos": 0.250317161123861,
+    "ref_target_margin": 0.03997302895242516
+  }
+}

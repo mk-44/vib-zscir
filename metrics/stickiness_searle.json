@@ -1,0 +1,20 @@
+{
+  "template": "a photo of $ that {caption}",
+  "rows": {
+    "searle": {
+      "n_queries": 1020,
+      "n_gt": 220,
+      "r10_ref": 0.6607843137254902,
+      "median_rank_ref": 3,
+      "mean_rank_ref": 85.99117647058823,
+      "sim_ref_mean": 0.2982388258710796,
+      "sim_gt_mean": 0.2605441747158062,
+      "sim_delta": 0.03824719941487631,
+      "best_gt_rank_median": 12,
+      "p_gtset_mean": 0.09696228308266008,
+      "space": "openai-ViT-L/14",
+      "map@10": 13.39,
+      "map_n": 220
+    }
+  }
+}

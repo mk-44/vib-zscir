@@ -1,0 +1,19 @@
+{
+  "template": "a photo of $ that {caption}",
+  "rows": {
+    "lincir": {
+      "n_queries": 1020,
+      "n_gt": 220,
+      "r10_ref": 0.5215686274509804,
+      "median_rank_ref": 9,
+      "mean_rank_ref": 120.75784313725491,
+      "sim_ref_mean": 0.30221317844355805,
+      "sim_gt_mean": 0.27960429337732107,
+      "sim_delta": 0.026000110495060513,
+      "best_gt_rank_median": 9,
+      "space": "hf-ViT-L/14",
+      "map@10": 13.97,
+      "map_n": 220
+    }
+  }
+}

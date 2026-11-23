@@ -1,0 +1,447 @@
+[
+  {
+    "query_id": 150,
+    "reference_img_id": 377267,
+    "caption": "has more than one",
+    "tags": [
+      "CARD"
+    ],
+    "baseline_gt_rank": 537,
+    "vib_gt_rank": 1,
+    "ref_rank_baseline": 1,
+    "rank_gain": 536,
+    "baseline_top5_sim_to_ref": 0.732,
+    "vib_top5_sim_to_ref": 0.757,
+    "baseline_top5": [
+      13185,
+      155258,
+      143852,
+      448349,
+      256857
+    ],
+    "vib_top5": [
+      367211,
+      176355,
+      257054,
+      99080,
+      416150
+    ],
+    "gt_ids": [
+      367211,
+      287905
+    ]
+  },
+  {
+    "query_id": 79,
+    "reference_img_id": 289106,
+    "caption": "has a bag next to her and is not looking at the camera",
+    "tags": [
+      "SPAT",
+      "NEG"
+    ],
+    "baseline_gt_rank": 387,
+    "vib_gt_rank": 2,
+    "ref_rank_baseline": 1,
+    "rank_gain": 385,
+    "baseline_top5_sim_to_ref": 0.608,
+    "vib_top5_sim_to_ref": 0.656,
+    "baseline_top5": [
+      443300,
+      243890,
+      539130,
+      513889,
+      307654
+    ],
+    "vib_top5": [
+      66450,
+      361357,
+      457526,
+      182588,
+      410674
+    ],
+    "gt_ids": [
+      375348,
+      361357,
+      7919,
+      151837,
+      117870,
+      314374,
+      4207,
+      268573,
+      397457,
+      438039,
+      297804
+    ]
+  },
+  {
+    "query_id": 74,
+    "reference_img_id": 196466,
+    "caption": "is only one and the photo has a body of water in the background",
+    "tags": [
+      "CARD"
+    ],
+    "baseline_gt_rank": 75,
+    "vib_gt_rank": 2,
+    "ref_rank_baseline": 2,
+    "rank_gain": 73,
+    "baseline_top5_sim_to_ref": 0.639,
+    "vib_top5_sim_to_ref": 0.698,
+    "baseline_top5": [
+      246349,
+      117212,
+      379490,
+      177075,
+      186570
+    ],
+    "vib_top5": [
+      71831,
+      437294,
+      327863,
+      193057,
+      570642
+    ],
+    "gt_ids": [
+      437294,
+      156413,
+      530794,
+      316958,
+      431685,
+      266634,
+      385229,
+      84009
+    ]
+  },
+  {
+    "query_id": 14,
+    "reference_img_id": 160161,
+    "caption": "is on a track and has the front wheel in the air",
+    "tags": [
+      "SPAT"
+    ],
+    "baseline_gt_rank": 75,
+    "vib_gt_rank": 2,
+    "ref_rank_baseline": 1,
+    "rank_gain": 73,
+    "baseline_top5_sim_to_ref": 0.632,
+    "vib_top5_sim_to_ref": 0.66,
+    "baseline_top5": [
+      560224,
+      208823,
+      298739,
+      289483,
+      247991
+    ],
+    "vib_top5": [
+      298739,
+      558400,
+      376551,
+      368698,
+      231943
+    ],
+    "gt_ids": [
+      558400,
+      55420,
+      160788
+    ]
+  },
+  {
+    "query_id": 194,
+    "reference_img_id": 460011,
+    "caption": "has two of them and there is a fridge instead of an oven",
+    "tags": [
+      "CARD"
+    ],
+    "baseline_gt_rank": 69,
+    "vib_gt_rank": 1,
+    "ref_rank_baseline": 2,
+    "rank_gain": 68,
+    "baseline_top5_sim_to_ref": 0.661,
+    "vib_top5_sim_to_ref": 0.723,
+    "baseline_top5": [
+      250947,
+      494111,
+      476997,
+      501445,
+      206252
+    ],
+    "vib_top5": [
+      487147,
+      501445,
+      447536,
+      375702,
+      120523
+    ],
+    "gt_ids": [
+      487147
+    ]
+  },
+  {
+    "query_id": 60,
+    "reference_img_id": 283297,
+    "caption": "has a red color and is only one, the photo has rocks in the background",
+    "tags": [
+      "CARD"
+    ],
+    "baseline_gt_rank": 46,
+    "vib_gt_rank": 1,
+    "ref_rank_baseline": 1,
+    "rank_gain": 45,
+    "baseline_top5_sim_to_ref": 0.846,
+    "vib_top5_sim_to_ref": 0.804,
+    "baseline_top5": [
+      84791,
+      61104,
+      122434,
+      417882,
+      227080
+    ],
+    "vib_top5": [
+      23304,
+      84791,
+      343419,
+      122434,
+      102162
+    ],
+    "gt_ids": [
+      23304
+    ]
+  },
+  {
+    "query_id": 182,
+    "reference_img_id": 282616,
+    "caption": "is shot next to a car",
+    "tags": [
+      "SPAT"
+    ],
+    "baseline_gt_rank": 39,
+    "vib_gt_rank": 1,
+    "ref_rank_baseline": 1,
+    "rank_gain": 38,
+    "baseline_top5_sim_to_ref": 0.632,
+    "vib_top5_sim_to_ref": 0.639,
+    "baseline_top5": [
+      376312,
+      261501,
+      96523,
+      181824,
+      293158
+    ],
+    "vib_top5": [
+      241618,
+      61987,
+      289185,
+      149586,
+      65065
+    ],
+    "gt_ids": [
+      241618,
+      360843,
+      38636,
+      103876
+    ]
+  },
+  {
+    "query_id": 17,
+    "reference_img_id": 136863,
+    "caption": "has two of them and a beer instead of a coke",
+    "tags": [
+      "CARD"
+    ],
+    "baseline_gt_rank": 27,
+    "vib_gt_rank": 3,
+    "ref_rank_baseline": 1,
+    "rank_gain": 24,
+    "baseline_top5_sim_to_ref": 0.619,
+    "vib_top5_sim_to_ref": 0.649,
+    "baseline_top5": [
+      397099,
+      81813,
+      219950,
+      484741,
+      438246
+    ],
+    "vib_top5": [
+      351848,
+      193358,
+      42656,
+      239203,
+      485096
+    ],
+    "gt_ids": [
+      42656,
+      481578
+    ]
+  },
+  {
+    "query_id": 52,
+    "reference_img_id": 446857,
+    "caption": "is more filled and is viewed from the same angle",
+    "tags": [
+      "CARD"
+    ],
+    "baseline_gt_rank": 19,
+    "vib_gt_rank": 5,
+    "ref_rank_baseline": 1,
+    "rank_gain": 14,
+    "baseline_top5_sim_to_ref": 0.795,
+    "vib_top5_sim_to_ref": 0.817,
+    "baseline_top5": [
+      372269,
+      411576,
+      539177,
+      473976,
+      430432
+    ],
+    "vib_top5": [
+      100313,
+      183032,
+      460547,
+      539177,
+      307288
+    ],
+    "gt_ids": [
+      103010,
+      307288,
+      221403,
+      50851,
+      38741,
+      306414,
+      31960
+    ]
+  },
+  {
+    "query_id": 50,
+    "reference_img_id": 412387,
+    "caption": "is skateboarding and is seen from the front",
+    "tags": [
+      "SPAT"
+    ],
+    "baseline_gt_rank": 16,
+    "vib_gt_rank": 3,
+    "ref_rank_baseline": 1,
+    "rank_gain": 13,
+    "baseline_top5_sim_to_ref": 0.594,
+    "vib_top5_sim_to_ref": 0.605,
+    "baseline_top5": [
+      359814,
+      534820,
+      454643,
+      340579,
+      46659
+    ],
+    "vib_top5": [
+      350354,
+      340579,
+      283779,
+      112146,
+      149419
+    ],
+    "gt_ids": [
+      329973,
+      283779,
+      433437,
+      112146,
+      54798,
+      414788,
+      465111
+    ]
+  },
+  {
+    "query_id": 149,
+    "reference_img_id": 358487,
+    "caption": "is shot from the same angle and the bike has a different color",
+    "tags": [],
+    "baseline_gt_rank": 122,
+    "vib_gt_rank": 3,
+    "ref_rank_baseline": 1,
+    "rank_gain": 119,
+    "baseline_top5_sim_to_ref": 0.675,
+    "vib_top5_sim_to_ref": 0.763,
+    "baseline_top5": [
+      345326,
+      139021,
+      48089,
+      211114,
+      308864
+    ],
+    "vib_top5": [
+      391287,
+      145482,
+      89465,
+      533652,
+      225718
+    ],
+    "gt_ids": [
+      447870,
+      89465
+    ]
+  },
+  {
+    "query_id": 169,
+    "reference_img_id": 221372,
+    "caption": "is completely white and there is a person in it",
+    "tags": [],
+    "baseline_gt_rank": 38,
+    "vib_gt_rank": 3,
+    "ref_rank_baseline": 1,
+    "rank_gain": 35,
+    "baseline_top5_sim_to_ref": 0.866,
+    "vib_top5_sim_to_ref": 0.726,
+    "baseline_top5": [
+      483792,
+      516739,
+      231917,
+      459842,
+      545737
+    ],
+    "vib_top5": [
+      316122,
+      363383,
+      50052,
+      336255,
+      461050
+    ],
+    "gt_ids": [
+      83703,
+      429304,
+      174830,
+      129556,
+      252974,
+      50052,
+      336512,
+      453144
+    ]
+  },
+  {
+    "query_id": 94,
+    "reference_img_id": 369366,
+    "caption": "has no apron and is kneading instead of making a sandwich",
+    "tags": [
+      "NEG"
+    ],
+    "baseline_gt_rank": 21,
+    "vib_gt_rank": 5,
+    "ref_rank_baseline": 1,
+    "rank_gain": 16,
+    "baseline_top5_sim_to_ref": 0.794,
+    "vib_top5_sim_to_ref": 0.755,
+    "baseline_top5": [
+      66069,
+      290769,
+      219005,
+      91245,
+      527457
+    ],
+    "vib_top5": [
+      233760,
+      241556,
+      336716,
+      66069,
+      53946
+    ],
+    "gt_ids": [
+      53946,
+      314047
+    ]
+  }
+]

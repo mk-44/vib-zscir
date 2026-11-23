@@ -1,0 +1,15 @@
+{
+  "backbone": "ViT-L/14",
+  "n_unique_refs": 220,
+  "results": {
+    "vib01": {
+      "checkpoint": "/notebooks/experiment/4M_checkpoints/vib_hd256_tok1_lslr0.2_lsmax116_vib0.0001/epoch_01_step_01500.pt",
+      "kl_mu_nats": 22.5,
+      "kl_sigma_nats": 2.8753,
+      "kl_total_nats": 25.3753,
+      "kl_mu_bits": 32.4606,
+      "kl_sigma_bits": 4.1481,
+      "kl_total_bits": 36.6088
+    }
+  }
+}

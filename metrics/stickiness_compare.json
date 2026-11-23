@@ -1,0 +1,50 @@
+{
+  "template": "a photo of $ that {caption}",
+  "rows": {
+    "baseline": {
+      "n_queries": 1020,
+      "n_gt": 220,
+      "r10_ref": 0.8362745098039216,
+      "median_rank_ref": 1,
+      "mean_rank_ref": 18.7078431372549,
+      "sim_ref_mean": 0.32656928997705964,
+      "sim_gt_mean": 0.2627010039321831,
+      "sim_delta": 0.06610577228254655,
+      "best_gt_rank_median": 11,
+      "p_gtset_mean": 0.0988071793356069,
+      "space": "openai-ViT-L/14",
+      "map@10": 12.12,
+      "map_n": 220
+    },
+    "vib": {
+      "n_queries": 1020,
+      "n_gt": 220,
+      "r10_ref": 0.6607843137254902,
+      "median_rank_ref": 3,
+      "mean_rank_ref": 55.555882352941175,
+      "sim_ref_mean": 0.28882155950162924,
+      "sim_gt_mean": 0.25031717007887144,
+      "sim_delta": 0.03997303577909905,
+      "best_gt_rank_median": 17,
+      "p_gtset_mean": 0.09511174054999752,
+      "space": "openai-ViT-L/14",
+      "map@10": 12.38,
+      "map_n": 220
+    },
+    "searle": {
+      "n_queries": 1020,
+      "n_gt": 220,
+      "r10_ref": 0.6607843137254902,
+      "median_rank_ref": 3,
+      "mean_rank_ref": 85.99117647058823,
+      "sim_ref_mean": 0.2982388258710796,
+      "sim_gt_mean": 0.2605441747158062,
+      "sim_delta": 0.03824719941487631,
+      "best_gt_rank_median": 12,
+      "p_gtset_mean": 0.09696228308266008,
+      "space": "openai-ViT-L/14",
+      "map@10": 13.39,
+      "map_n": 220
+    }
+  }
+}

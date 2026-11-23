@@ -1,0 +1,27 @@
+# Python and notebook caches
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# OS, editor and local tool settings
+.DS_Store
+.vscode/
+.idea/
+.claude/
+
+# Secrets (e.g. the Hugging Face token)
+.env
+.env.*
+
+# Model weights and feature caches: released on Hugging Face, never committed
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+
+# Scratch output of the training unit tests
+train/temp_test_outputs/
+
+# 82 MB aggregate of every Fashion-IQ eval; kept in the 2026-11-19 backup zip, not in git.
+# Its 19 unit-norm (pnorm1.0) entries were computed without the pseudo_norm projection.
+/all_model_comparison/all_fashion_metrics.json

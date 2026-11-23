@@ -1,0 +1,94 @@
+# =============================================================================
+# config/config_h.yaml
+# ViT-H / open_clip — VIB recipe, mirrors the ViT-L headline run
+#   (vib_hd256_tok1_lslr0.2_lsmax116, β warmed over first 30%, from scratch).
+#
+# Usage:
+#   PYTHONPATH=. python train/train_h.py --config config/config_h.yaml \
+#       --emb_cache /notebooks/experiment/vith_emb_cache
+#
+# Notes
+#   * CLI flags override any value here (e.g. --vib_beta for a sweep, --seed N).
+#   * --emb_cache / --emb_shards_per_buffer are CLI-only. They are NOT Config
+#     fields, so adding them here would raise "Unknown config key".
+#   * Do NOT add steps_per_epoch / total_steps / warmup_steps — they are derived
+#     properties (from approx_train_samples / batch_size / epochs) and cannot be
+#     set. With the values below: steps_per_epoch=3906, total_steps=19530,
+#     warmup_steps=976 — identical to the headline schedule.
+# =============================================================================
+
+# ----- Data -----
+train_data_dir       : /notebooks/experiment/train_data
+eval_data_dir        : /notebooks/experiment/eval_data
+train_shards         : 793            # shards 0000 .. 0792 (val shard 0793 excluded from training)
+val_shard            : 793
+approx_train_samples : 4000000        # fixes the schedule; keep at 4e6 to match the headline
+hf_token             : null
+
+# ----- Backbone (ViT-H via open_clip) -----
+clip_model      : ViT-H-14
+clip_backend    : open_clip
+clip_pretrained : laion2b_s32b_b79k
+
+# ----- Mapper -----
+mapper_type : vib
+hidden_dim  : 256
+num_tokens  : 1
+dropout     : 0.1
+
+# ----- Data loading -----
+batch_size  : 1024
+num_workers : 4
+shuffle_buf : 2000                    # live-path only; the emb-cache loader uses emb_shards_per_buffer (CLI)
+
+# ----- Optimisation -----
+epochs       : 5
+lr           : 1.0e-4
+min_lr       : 1.0e-6
+weight_decay : 0.1
+betas        : [0.9, 0.98]
+grad_clip    : 1.0
+amp          : true
+use_captions : false                  # required false for the emb-cache path (cache has no captions)
+
+# ----- Logit-scale control (headline: lslr0.2 / lsmax116) -----
+ls_lr_scale : 0.2
+ls_max      : 116.0
+
+# ----- VIB -----
+# vib_beta is the meaned-KL RAW value. raw 0.1024 here == paper beta=0.1 under
+# the current meaned-KL model_h (the old summed-KL code used raw 1e-4 for the
+# same paper beta). Override with --vib_beta on the CLI for a sweep.
+vib_beta            : 0.1024
+vib_beta_initial    : 0.0
+vib_beta_warmup     : 0.3             # linear KL warmup over first 30% of training
+vib_beta_delay      : 0.0
+vib_delay           : 0.0
+vib_logvar_bias     : -2.0
+vib_kl_mu_weight    : 1.0
+vib_kl_var_weight   : 1.0
+vib_logvar_clip_max : 2.0
+
+# ----- Auxiliary losses (off — headline does not use them) -----
+margin           : 0.0
+margin_weight    : 0.0
+margin_delay     : 0.2
+noise_sigma      : 0.0
+pseudo_norm      : 0.0
+repulsion_weight : 0.0
+decorr_weight    : 0.0
+
+# ----- Checkpointing -----
+output_dir       : /notebooks/experiment/4M_checkpoints
+save_every_steps : 500
+resume           : null
+init_from        : null
+
+# ----- Eval -----
+eval_every_steps : 1000
+eval_epoch_end   : true
+run_analysis     : true
+
+# ----- Misc -----
+device : cuda
+seed   : null                          # headline regime is unseeded; set --seed N for a reproducible draw

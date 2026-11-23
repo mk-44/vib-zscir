@@ -1,0 +1,8 @@
+{
+  "vib01": {
+    "checkpoint": "/notebooks/experiment/4M_checkpoints/vib_hd256_tok1_lslr0.2_lsmax116_vib0.0001/epoch_01_step_01500.pt",
+    "sigma_bar": 0.9435,
+    "sigma_min": 0.6296,
+    "mu_norm": 6.6987
+  }
+}

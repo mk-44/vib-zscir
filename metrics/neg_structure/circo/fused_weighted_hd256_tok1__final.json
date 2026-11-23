@@ -1,0 +1,6 @@
+{
+  "checkpoint": "/notebooks/experiment/checkpoints_1500k_trainable_ls/fused_weighted_hd256_tok1/final.pt",
+  "skipped": true,
+  "mapper_type": "fused_weighted",
+  "skipped_reason": "needs_intermediate_features"
+}

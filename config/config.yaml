@@ -1,0 +1,117 @@
+# config/config.yaml
+# Default configuration for Pic2Word ZS-CIR training.
+# All values here match Config dataclass defaults.
+# Override any field from CLI or by passing a different yaml to load_from_yaml().
+
+# ------------------------------------------------------------------
+# Data constants
+# ------------------------------------------------------------------
+hf_base_url          : "https://huggingface.co/datasets/pixparse/cc12m-wds/resolve/main"
+hf_eval_repo_id      : "BUAADreamer/cir_dataset"
+train_data_dir       : "/notebooks/experiment/train_data"
+eval_data_dir        : "/notebooks/experiment/eval_data"
+train_shards         : 793          # shards 0000 → 0792
+val_shard            : 793          # shard  0793
+approx_train_samples : 4000000
+approx_val_samples   : 5000
+
+# ------------------------------------------------------------------
+# Model constants
+# ------------------------------------------------------------------
+max_token_len : 77
+clip_prompt   : "a photo of"
+
+# ------------------------------------------------------------------
+# Model
+# ------------------------------------------------------------------
+clip_model   : "ViT-L/14"
+mapper_type  : "base"              # base | multilayer | weighted | fused_weighted | vib
+hidden_dim   : 256
+num_tokens   : 1
+num_heads    : 8
+num_layers   : 1
+dropout      : 0.1
+merge_tokens : null
+merge_type   : "learned"           # learned | weighted
+pseudo_norm  : 0.0                 # 0.0 = disabled (no norm constraint)
+
+# ------------------------------------------------------------------
+# Data loading
+# ------------------------------------------------------------------
+batch_size   : 1024
+num_workers  : 4
+shuffle_buf  : 2000
+hf_token     : null
+
+# ------------------------------------------------------------------
+# Training
+# ------------------------------------------------------------------
+epochs       : 5
+lr           : 0.0001
+min_lr       : 0.000001
+weight_decay : 0.1
+betas        : [0.9, 0.98]
+grad_clip    : 1.0
+amp          : true
+use_captions : false
+repulsion_weight : 0.0
+decorr_weight    : 0.0
+
+# ------------------------------------------------------------------
+# Logit scale control
+# ------------------------------------------------------------------
+ls_lr_scale : 1.0    # 1.0 = same lr as mapper (default, old behaviour)
+ls_max      : 0.0    # 0.0 = no clamp (default, old behaviour)
+
+# ------------------------------------------------------------------
+# Soft margin auxiliary loss
+# ------------------------------------------------------------------
+margin        : 0.0  # 0.0 = disabled (default, old behaviour)
+margin_weight : 0.0  # 0.0 = disabled (default, old behaviour)
+margin_delay  : 0.2  # fraction of total_steps before ramp starts
+
+# ------------------------------------------------------------------
+# Add noise to pseudo-token
+# ------------------------------------------------------------------
+noise_sigma   : 0.0  # 0.0 = disabled
+l2_token_weight : 0.0  # 0.0 = disabled (VIB L2-on-mean ablation; uses vib_beta_warmup schedule)
+
+# ------------------------------------------------------------------
+# Variational Information Bottleneck (VIB)
+# ------------------------------------------------------------------
+vib_beta         : 0.0    # KL weight ceiling (β_target); 0.0 = disabled
+vib_beta_initial : 0.0    # KL weight floor at warmup start (β_initial)
+vib_beta_warmup  : 0.3    # fraction of total_steps for linear β warmup
+vib_beta_delay   : 0.0    # fraction of training with β=0 before warmup starts
+vib_delay        : 0.0    # fraction of training with deterministic mapper (no sampling)
+vib_logvar_bias  : -2.0   # initial bias for fc_logvar (controls initial σ at step 0)
+vib_kl_mu_weight : 1.0
+vib_kl_var_weight : 1.0
+vib_logvar_clip_max : 2.0
+
+# ------------------------------------------------------------------
+# Warm-start / weights-only initialization
+# ------------------------------------------------------------------
+# Mutually exclusive with `resume`. init_from loads compatible mapper
+# weights only, starts a fresh run (epoch=0, step=0, fresh optimizer).
+init_from : null
+
+# ------------------------------------------------------------------
+# Checkpointing
+# ------------------------------------------------------------------
+output_dir       : "checkpoints"
+save_every_steps : 500
+resume           : null
+
+# ------------------------------------------------------------------
+# Device
+# ------------------------------------------------------------------
+device : "cuda"
+seed   : null    # null = no seeding (full random init); int = reproducible run
+
+# ------------------------------------------------------------------
+# Eval
+# ------------------------------------------------------------------    
+eval_every_steps :  1000
+eval_epoch_end   :  true
+run_analysis     :  true

@@ -1,0 +1,445 @@
+Recursively searching for .pt files under /notebooks/experiment...
+  Found 427 candidate .pt files
+
+Will evaluate: 427 checkpoints (skipping 0 already done)
+
+================================================================================
+[  1/427] 4M_checkpoints/base_hd256_tok1_lslr0.2_lsmax116/epoch_00/checkpoint.pt
+        OK   avgR@10=25.09  avgR10_ref= 42.5%  avgSimΔ=+0.0179  (22.2s)
+[  2/427] 4M_checkpoints/base_hd256_tok1_lslr0.2_lsmax116/epoch_00_step_00500.pt
+        OK   avgR@10=19.86  avgR10_ref=  5.3%  avgSimΔ=-0.0271  (18.9s)
+[  3/427] 4M_checkpoints/base_hd256_tok1_lslr0.2_lsmax116/epoch_00_step_01000.pt
+        OK   avgR@10=22.79  avgR10_ref= 23.0%  avgSimΔ=-0.0012  (18.8s)
+[  4/427] 4M_checkpoints/base_hd256_tok1_lslr0.2_lsmax116/epoch_00_step_01500.pt
+        OK   avgR@10=23.56  avgR10_ref= 31.6%  avgSimΔ=+0.0074  (20.2s)
+[  5/427] 4M_checkpoints/base_hd256_tok1_lslr0.2_lsmax116/epoch_00_step_02000.pt
+        OK   avgR@10=24.88  avgR10_ref= 38.0%  avgSimΔ=+0.0138  (18.9s)
+[  6/427] 4M_checkpoints/base_hd256_tok1_lslr0.2_lsmax116/epoch_00_step_02500.pt
+        OK   avgR@10=24.68  avgR10_ref= 40.2%  avgSimΔ=+0.0162  (19.9s)
+[  7/427] 4M_checkpoints/base_hd256_tok1_lslr0.2_lsmax116/epoch_00_step_03000.pt
+        OK   avgR@10=24.65  avgR10_ref= 40.4%  avgSimΔ=+0.0155  (19.6s)
+[  8/427] 4M_checkpoints/base_hd256_tok1_lslr0.2_lsmax116/epoch_00_step_03500.pt
+        OK   avgR@10=24.55  avgR10_ref= 44.8%  avgSimΔ=+0.0213  (19.0s)
+[  9/427] 4M_checkpoints/base_hd256_tok1_lslr0.2_lsmax116/epoch_01/checkpoint.pt
+        OK   avgR@10=25.84  avgR10_ref= 51.5%  avgSimΔ=+0.0265  (18.5s)
+[ 10/427] 4M_checkpoints/base_hd256_tok1_lslr0.2_lsmax116/epoch_01_step_00500.pt
+        OK   avgR@10=25.77  avgR10_ref= 46.0%  avgSimΔ=+0.0207  (21.4s)
+        --- 10 ok, 0 failed, 0.05 ckpt/sec, ETA 138.7 min ---
+[ 11/427] 4M_checkpoints/base_hd256_tok1_lslr0.2_lsmax116/epoch_01_step_01000.pt
+        OK   avgR@10=24.90  avgR10_ref= 47.1%  avgSimΔ=+0.0229  (19.3s)
+[ 12/427] 4M_checkpoints/base_hd256_tok1_lslr0.2_lsmax116/epoch_01_step_01500.pt
+        OK   avgR@10=25.39  avgR10_ref= 49.8%  avgSimΔ=+0.0253  (20.2s)
+[ 13/427] 4M_checkpoints/base_hd256_tok1_lslr0.2_lsmax116/epoch_01_step_02000.pt
+        OK   avgR@10=25.60  avgR10_ref= 48.0%  avgSimΔ=+0.0229  (20.2s)
+[ 14/427] 4M_checkpoints/base_hd256_tok1_lslr0.2_lsmax116/epoch_01_step_02500.pt
+        OK   avgR@10=25.50  avgR10_ref= 51.0%  avgSimΔ=+0.0262  (21.0s)
+[ 15/427] 4M_checkpoints/base_hd256_tok1_lslr0.2_lsmax116/epoch_01_step_03000.pt
+        OK   avgR@10=25.20  avgR10_ref= 52.8%  avgSimΔ=+0.0292  (20.1s)
+[ 16/427] 4M_checkpoints/base_hd256_tok1_lslr0.2_lsmax116/epoch_01_step_03500.pt
+        OK   avgR@10=24.79  avgR10_ref= 49.0%  avgSimΔ=+0.0246  (20.4s)
+[ 17/427] 4M_checkpoints/base_hd256_tok1_lslr0.2_lsmax116/epoch_02/checkpoint.pt
+        OK   avgR@10=25.70  avgR10_ref= 52.1%  avgSimΔ=+0.0277  (19.6s)
+[ 18/427] 4M_checkpoints/base_hd256_tok1_lslr0.2_lsmax116/epoch_02_step_00500.pt
+        OK   avgR@10=25.40  avgR10_ref= 49.5%  avgSimΔ=+0.0253  (18.9s)
+[ 19/427] 4M_checkpoints/base_hd256_tok1_lslr0.2_lsmax116/epoch_02_step_01000.pt
+        OK   avgR@10=24.96  avgR10_ref= 52.0%  avgSimΔ=+0.0276  (18.5s)
+[ 20/427] 4M_checkpoints/base_hd256_tok1_lslr0.2_lsmax116/epoch_02_step_01500.pt
+        OK   avgR@10=25.34  avgR10_ref= 52.9%  avgSimΔ=+0.0281  (21.0s)
+        --- 20 ok, 0 failed, 0.05 ckpt/sec, ETA 136.3 min ---
+[ 21/427] 4M_checkpoints/base_hd256_tok1_lslr0.2_lsmax116/epoch_02_step_02000.pt
+        OK   avgR@10=25.25  avgR10_ref= 52.5%  avgSimΔ=+0.0283  (19.1s)
+[ 22/427] 4M_checkpoints/base_hd256_tok1_lslr0.2_lsmax116/epoch_02_step_02500.pt
+        OK   avgR@10=25.25  avgR10_ref= 55.2%  avgSimΔ=+0.0312  (19.7s)
+[ 23/427] 4M_checkpoints/base_hd256_tok1_lslr0.2_lsmax116/epoch_02_step_03000.pt
+        OK   avgR@10=24.95  avgR10_ref= 53.2%  avgSimΔ=+0.0292  (20.6s)
+[ 24/427] 4M_checkpoints/base_hd256_tok1_lslr0.2_lsmax116/epoch_02_step_03500.pt
+        OK   avgR@10=25.42  avgR10_ref= 54.6%  avgSimΔ=+0.0305  (19.0s)
+[ 25/427] 4M_checkpoints/base_hd256_tok1_lslr0.2_lsmax116/final.pt
+        OK   avgR@10=25.09  avgR10_ref= 42.5%  avgSimΔ=+0.0179  (20.5s)
+[ 26/427] 4M_checkpoints/base_hd256_tok1_lslr0.2_lsmax116_noise0.1/epoch_00/checkpoint.pt
+        OK   avgR@10=21.57  avgR10_ref= 63.4%  avgSimΔ=+0.0449  (19.1s)
+[ 27/427] 4M_checkpoints/base_hd256_tok1_lslr0.2_lsmax116_noise0.1/epoch_00_step_00500.pt
+        OK   avgR@10=17.74  avgR10_ref=  2.0%  avgSimΔ=-0.0401  (20.1s)
+[ 28/427] 4M_checkpoints/base_hd256_tok1_lslr0.2_lsmax116_noise0.1/epoch_00_step_01000.pt
+        OK   avgR@10=21.39  avgR10_ref= 29.5%  avgSimΔ=+0.0089  (21.0s)
+[ 29/427] 4M_checkpoints/base_hd256_tok1_lslr0.2_lsmax116_noise0.1/epoch_00_step_01500.pt
+        OK   avgR@10=21.71  avgR10_ref= 40.7%  avgSimΔ=+0.0209  (20.1s)
+[ 30/427] 4M_checkpoints/base_hd256_tok1_lslr0.2_lsmax116_noise0.1/epoch_00_step_02000.pt
+        OK   avgR@10=22.06  avgR10_ref= 52.4%  avgSimΔ=+0.0320  (19.0s)
+        --- 30 ok, 0 failed, 0.05 ckpt/sec, ETA 133.2 min ---
+[ 31/427] 4M_checkpoints/base_hd256_tok1_lslr0.2_lsmax116_noise0.1/epoch_00_step_02500.pt
+        OK   avgR@10=21.50  avgR10_ref= 55.3%  avgSimΔ=+0.0357  (20.8s)
+[ 32/427] 4M_checkpoints/base_hd256_tok1_lslr0.2_lsmax116_noise0.1/epoch_00_step_03000.pt
+        OK   avgR@10=21.79  avgR10_ref= 59.7%  avgSimΔ=+0.0407  (19.0s)
+[ 33/427] 4M_checkpoints/base_hd256_tok1_lslr0.2_lsmax116_noise0.1/epoch_00_step_03500.pt
+        OK   avgR@10=22.22  avgR10_ref= 62.5%  avgSimΔ=+0.0428  (20.3s)
+[ 34/427] 4M_checkpoints/base_hd256_tok1_lslr0.2_lsmax116_noise0.1/epoch_01_step_00500.pt
+        OK   avgR@10=21.69  avgR10_ref= 66.5%  avgSimΔ=+0.0484  (21.8s)
+[ 35/427] 4M_checkpoints/base_hd256_tok1_lslr0.2_lsmax116_noise0.1/epoch_01_step_01000.pt
+        OK   avgR@10=20.33  avgR10_ref= 67.6%  avgSimΔ=+0.0502  (18.9s)
+[ 36/427] 4M_checkpoints/base_hd256_tok1_lslr0.2_lsmax116_noise0.1/final.pt
+        OK   avgR@10=21.57  avgR10_ref= 63.4%  avgSimΔ=+0.0449  (20.7s)
+[ 37/427] 4M_checkpoints/base_hd256_tok1_lslr0.2_lsmax116_pnorm1.0/epoch_00/checkpoint.pt
+        OK   avgR@10=18.64  avgR10_ref= 30.7%  avgSimΔ=+0.0129  (19.0s)
+[ 38/427] 4M_checkpoints/base_hd256_tok1_lslr0.2_lsmax116_pnorm1.0/epoch_00_step_00500.pt
+        OK   avgR@10=18.87  avgR10_ref=  2.6%  avgSimΔ=-0.0392  (21.9s)
+[ 39/427] 4M_checkpoints/base_hd256_tok1_lslr0.2_lsmax116_pnorm1.0/epoch_00_step_01000.pt
+        OK   avgR@10=18.75  avgR10_ref= 12.1%  avgSimΔ=-0.0099  (19.1s)
+[ 40/427] 4M_checkpoints/base_hd256_tok1_lslr0.2_lsmax116_pnorm1.0/epoch_00_step_01500.pt
+        OK   avgR@10=19.29  avgR10_ref= 19.5%  avgSimΔ=+0.0010  (20.7s)
+        --- 40 ok, 0 failed, 0.05 ckpt/sec, ETA 130.6 min ---
+[ 41/427] 4M_checkpoints/base_hd256_tok1_lslr0.2_lsmax116_pnorm1.0/epoch_00_step_02000.pt
+        OK   avgR@10=19.44  avgR10_ref= 22.4%  avgSimΔ=+0.0040  (18.9s)
+[ 42/427] 4M_checkpoints/base_hd256_tok1_lslr0.2_lsmax116_pnorm1.0/epoch_00_step_02500.pt
+        OK   avgR@10=18.96  avgR10_ref= 26.0%  avgSimΔ=+0.0083  (20.7s)
+[ 43/427] 4M_checkpoints/base_hd256_tok1_lslr0.2_lsmax116_pnorm1.0/epoch_00_step_03000.pt
+        OK   avgR@10=18.43  avgR10_ref= 28.0%  avgSimΔ=+0.0107  (19.8s)
+[ 44/427] 4M_checkpoints/base_hd256_tok1_lslr0.2_lsmax116_pnorm1.0/epoch_00_step_03500.pt
+        OK   avgR@10=18.60  avgR10_ref= 29.9%  avgSimΔ=+0.0122  (19.2s)
+[ 45/427] 4M_checkpoints/base_hd256_tok1_lslr0.2_lsmax116_pnorm1.0/epoch_01/checkpoint.pt
+        OK   avgR@10=17.87  avgR10_ref= 38.1%  avgSimΔ=+0.0207  (19.1s)
+[ 46/427] 4M_checkpoints/base_hd256_tok1_lslr0.2_lsmax116_pnorm1.0/epoch_01_step_00500.pt
+        OK   avgR@10=18.14  avgR10_ref= 33.0%  avgSimΔ=+0.0150  (19.0s)
+[ 47/427] 4M_checkpoints/base_hd256_tok1_lslr0.2_lsmax116_pnorm1.0/epoch_01_step_01000.pt
+        OK   avgR@10=18.92  avgR10_ref= 34.6%  avgSimΔ=+0.0156  (19.1s)
+[ 48/427] 4M_checkpoints/base_hd256_tok1_lslr0.2_lsmax116_pnorm1.0/epoch_01_step_01500.pt
+        OK   avgR@10=17.64  avgR10_ref= 33.6%  avgSimΔ=+0.0164  (18.8s)
+[ 49/427] 4M_checkpoints/base_hd256_tok1_lslr0.2_lsmax116_pnorm1.0/epoch_01_step_02000.pt
+        OK   avgR@10=18.18  avgR10_ref= 34.3%  avgSimΔ=+0.0156  (21.1s)
+[ 50/427] 4M_checkpoints/base_hd256_tok1_lslr0.2_lsmax116_pnorm1.0/epoch_01_step_02500.pt
+        OK   avgR@10=18.61  avgR10_ref= 38.7%  avgSimΔ=+0.0193  (18.8s)
+        --- 50 ok, 0 failed, 0.05 ckpt/sec, ETA 126.8 min ---
+[ 51/427] 4M_checkpoints/base_hd256_tok1_lslr0.2_lsmax116_pnorm1.0/epoch_01_step_03000.pt
+        OK   avgR@10=18.19  avgR10_ref= 37.9%  avgSimΔ=+0.0196  (18.9s)
+[ 52/427] 4M_checkpoints/base_hd256_tok1_lslr0.2_lsmax116_pnorm1.0/epoch_01_step_03500.pt
+        OK   avgR@10=17.35  avgR10_ref= 36.6%  avgSimΔ=+0.0186  (18.9s)
+[ 53/427] 4M_checkpoints/base_hd256_tok1_lslr0.2_lsmax116_pnorm1.0/epoch_02_step_00500.pt
+        OK   avgR@10=17.98  avgR10_ref= 40.8%  avgSimΔ=+0.0212  (19.0s)
+[ 54/427] 4M_checkpoints/base_hd256_tok1_lslr0.2_lsmax116_pnorm1.0/epoch_02_step_01000.pt
+        OK   avgR@10=18.25  avgR10_ref= 45.6%  avgSimΔ=+0.0261  (21.0s)
+[ 55/427] 4M_checkpoints/base_hd256_tok1_lslr0.2_lsmax116_pnorm1.0/final.pt
+        OK   avgR@10=18.64  avgR10_ref= 30.7%  avgSimΔ=+0.0129  (19.1s)
+[ 56/427] 4M_checkpoints/base_hd256_tok1_margin0.1_mw0.1_lslr0.05_lsmax116/epoch_00/checkpoint.pt
+        OK   avgR@10=20.10  avgR10_ref= 72.4%  avgSimΔ=+0.0487  (20.0s)
+[ 57/427] 4M_checkpoints/base_hd256_tok1_margin0.1_mw0.1_lslr0.05_lsmax116/epoch_00_step_00500.pt
+        OK   avgR@10=20.31  avgR10_ref=  4.4%  avgSimΔ=-0.0301  (18.9s)
+[ 58/427] 4M_checkpoints/base_hd256_tok1_margin0.1_mw0.1_lslr0.05_lsmax116/epoch_00_step_01000.pt
+        OK   avgR@10=20.92  avgR10_ref= 30.4%  avgSimΔ=+0.0111  (19.1s)
+[ 59/427] 4M_checkpoints/base_hd256_tok1_margin0.1_mw0.1_lslr0.05_lsmax116/epoch_00_step_01500.pt
+        OK   avgR@10=21.06  avgR10_ref= 45.3%  avgSimΔ=+0.0258  (20.1s)
+[ 60/427] 4M_checkpoints/base_hd256_tok1_margin0.1_mw0.1_lslr0.05_lsmax116/epoch_00_step_02000.pt
+        OK   avgR@10=21.18  avgR10_ref= 53.5%  avgSimΔ=+0.0329  (19.1s)
+        --- 60 ok, 0 failed, 0.05 ckpt/sec, ETA 123.1 min ---
+[ 61/427] 4M_checkpoints/base_hd256_tok1_margin0.1_mw0.1_lslr0.05_lsmax116/epoch_00_step_02500.pt
+        OK   avgR@10=19.92  avgR10_ref= 61.6%  avgSimΔ=+0.0401  (20.3s)
+[ 62/427] 4M_checkpoints/base_hd256_tok1_margin0.1_mw0.1_lslr0.05_lsmax116/epoch_00_step_03000.pt
+        OK   avgR@10=20.65  avgR10_ref= 68.1%  avgSimΔ=+0.0448  (21.7s)
+[ 63/427] 4M_checkpoints/base_hd256_tok1_margin0.1_mw0.1_lslr0.05_lsmax116/epoch_00_step_03500.pt
+        OK   avgR@10=20.85  avgR10_ref= 66.3%  avgSimΔ=+0.0418  (20.4s)
+[ 64/427] 4M_checkpoints/base_hd256_tok1_margin0.1_mw0.1_lslr0.05_lsmax116/epoch_01/checkpoint.pt
+        OK   avgR@10=18.84  avgR10_ref= 84.4%  avgSimΔ=+0.0649  (18.8s)
+[ 65/427] 4M_checkpoints/base_hd256_tok1_margin0.1_mw0.1_lslr0.05_lsmax116/epoch_01_step_00500.pt
+        OK   avgR@10=19.95  avgR10_ref= 69.8%  avgSimΔ=+0.0474  (18.9s)
+[ 66/427] 4M_checkpoints/base_hd256_tok1_margin0.1_mw0.1_lslr0.05_lsmax116/epoch_01_step_01000.pt
+        OK   avgR@10=19.16  avgR10_ref= 72.7%  avgSimΔ=+0.0508  (20.1s)
+[ 67/427] 4M_checkpoints/base_hd256_tok1_margin0.1_mw0.1_lslr0.05_lsmax116/epoch_01_step_01500.pt
+        OK   avgR@10=19.05  avgR10_ref= 80.1%  avgSimΔ=+0.0573  (19.1s)
+[ 68/427] 4M_checkpoints/base_hd256_tok1_margin0.1_mw0.1_lslr0.05_lsmax116/epoch_01_step_02000.pt
+        OK   avgR@10=18.64  avgR10_ref= 75.1%  avgSimΔ=+0.0544  (21.9s)
+[ 69/427] 4M_checkpoints/base_hd256_tok1_margin0.1_mw0.1_lslr0.05_lsmax116/epoch_01_step_02500.pt
+        OK   avgR@10=19.14  avgR10_ref= 80.9%  avgSimΔ=+0.0592  (21.8s)
+[ 70/427] 4M_checkpoints/base_hd256_tok1_margin0.1_mw0.1_lslr0.05_lsmax116/epoch_01_step_03000.pt
+        OK   avgR@10=19.63  avgR10_ref= 79.7%  avgSimΔ=+0.0583  (21.2s)
+        --- 70 ok, 0 failed, 0.05 ckpt/sec, ETA 120.5 min ---
+[ 71/427] 4M_checkpoints/base_hd256_tok1_margin0.1_mw0.1_lslr0.05_lsmax116/epoch_01_step_03500.pt
+        OK   avgR@10=19.03  avgR10_ref= 81.4%  avgSimΔ=+0.0612  (18.9s)
+[ 72/427] 4M_checkpoints/base_hd256_tok1_margin0.1_mw0.1_lslr0.05_lsmax116/epoch_02_step_00500.pt
+        OK   avgR@10=20.09  avgR10_ref= 78.8%  avgSimΔ=+0.0582  (18.9s)
+[ 73/427] 4M_checkpoints/base_hd256_tok1_margin0.1_mw0.1_lslr0.05_lsmax116/epoch_02_step_01000.pt
+        OK   avgR@10=19.34  avgR10_ref= 82.5%  avgSimΔ=+0.0620  (21.2s)
+[ 74/427] 4M_checkpoints/base_hd256_tok1_margin0.1_mw0.1_lslr0.05_lsmax116/final.pt
+        OK   avgR@10=20.10  avgR10_ref= 72.4%  avgSimΔ=+0.0487  (21.0s)
+[ 75/427] 4M_checkpoints/base_hd256_tok1_margin0.1_mw0.2_lslr0.2_lsmax116/epoch_00/checkpoint.pt
+        OK   avgR@10=23.64  avgR10_ref= 46.0%  avgSimΔ=+0.0211  (21.8s)
+[ 76/427] 4M_checkpoints/base_hd256_tok1_margin0.1_mw0.2_lslr0.2_lsmax116/epoch_00_step_00500.pt
+        OK   avgR@10=20.30  avgR10_ref=  2.9%  avgSimΔ=-0.0383  (19.9s)
+[ 77/427] 4M_checkpoints/base_hd256_tok1_margin0.1_mw0.2_lslr0.2_lsmax116/epoch_00_step_01000.pt
+        OK   avgR@10=22.76  avgR10_ref= 18.5%  avgSimΔ=-0.0085  (18.9s)
+[ 78/427] 4M_checkpoints/base_hd256_tok1_margin0.1_mw0.2_lslr0.2_lsmax116/epoch_00_step_01500.pt
+        OK   avgR@10=23.65  avgR10_ref= 27.6%  avgSimΔ=+0.0027  (19.1s)
+[ 79/427] 4M_checkpoints/base_hd256_tok1_margin0.1_mw0.2_lslr0.2_lsmax116/epoch_00_step_02000.pt
+        OK   avgR@10=24.17  avgR10_ref= 34.0%  avgSimΔ=+0.0091  (20.9s)
+[ 80/427] 4M_checkpoints/base_hd256_tok1_margin0.1_mw0.2_lslr0.2_lsmax116/epoch_00_step_02500.pt
+        OK   avgR@10=24.00  avgR10_ref= 34.0%  avgSimΔ=+0.0090  (20.2s)
+        --- 80 ok, 0 failed, 0.05 ckpt/sec, ETA 117.4 min ---
+[ 81/427] 4M_checkpoints/base_hd256_tok1_margin0.1_mw0.2_lslr0.2_lsmax116/epoch_00_step_03000.pt
+        OK   avgR@10=24.35  avgR10_ref= 41.1%  avgSimΔ=+0.0159  (18.9s)
+[ 82/427] 4M_checkpoints/base_hd256_tok1_margin0.1_mw0.2_lslr0.2_lsmax116/epoch_00_step_03500.pt
+        OK   avgR@10=23.85  avgR10_ref= 43.0%  avgSimΔ=+0.0179  (20.5s)
+[ 83/427] 4M_checkpoints/base_hd256_tok1_margin0.1_mw0.2_lslr0.2_lsmax116/epoch_01/checkpoint.pt
+        OK   avgR@10=24.05  avgR10_ref= 57.1%  avgSimΔ=+0.0326  (20.2s)
+[ 84/427] 4M_checkpoints/base_hd256_tok1_margin0.1_mw0.2_lslr0.2_lsmax116/epoch_01_step_00500.pt
+        OK   avgR@10=24.20  avgR10_ref= 47.8%  avgSimΔ=+0.0226  (19.1s)
+[ 85/427] 4M_checkpoints/base_hd256_tok1_margin0.1_mw0.2_lslr0.2_lsmax116/epoch_01_step_01000.pt
+        OK   avgR@10=23.75  avgR10_ref= 47.1%  avgSimΔ=+0.0221  (20.9s)
+[ 86/427] 4M_checkpoints/base_hd256_tok1_margin0.1_mw0.2_lslr0.2_lsmax116/epoch_01_step_01500.pt
+        OK   avgR@10=24.07  avgR10_ref= 51.6%  avgSimΔ=+0.0263  (19.8s)
+[ 87/427] 4M_checkpoints/base_hd256_tok1_margin0.1_mw0.2_lslr0.2_lsmax116/epoch_01_step_02000.pt
+        OK   avgR@10=23.89  avgR10_ref= 53.2%  avgSimΔ=+0.0284  (20.1s)
+[ 88/427] 4M_checkpoints/base_hd256_tok1_margin0.1_mw0.2_lslr0.2_lsmax116/epoch_01_step_02500.pt
+        OK   avgR@10=24.10  avgR10_ref= 54.8%  avgSimΔ=+0.0300  (19.4s)
+[ 89/427] 4M_checkpoints/base_hd256_tok1_margin0.1_mw0.2_lslr0.2_lsmax116/epoch_01_step_03000.pt
+        OK   avgR@10=24.01  avgR10_ref= 56.5%  avgSimΔ=+0.0312  (20.3s)
+[ 90/427] 4M_checkpoints/base_hd256_tok1_margin0.1_mw0.2_lslr0.2_lsmax116/epoch_01_step_03500.pt
+        OK   avgR@10=24.33  avgR10_ref= 59.1%  avgSimΔ=+0.0341  (19.0s)
+        --- 90 ok, 0 failed, 0.05 ckpt/sec, ETA 114.2 min ---
+[ 91/427] 4M_checkpoints/base_hd256_tok1_margin0.1_mw0.2_lslr0.2_lsmax116/final.pt
+        OK   avgR@10=23.64  avgR10_ref= 46.0%  avgSimΔ=+0.0211  (19.1s)
+[ 92/427] 4M_checkpoints/base_hd256_tok1_margin0.2_mw0.4_lslr0.4_lsmax116/epoch_00/checkpoint.pt
+        OK   avgR@10=23.15  avgR10_ref= 42.2%  avgSimΔ=+0.0197  (20.2s)
+[ 93/427] 4M_checkpoints/base_hd256_tok1_margin0.2_mw0.4_lslr0.4_lsmax116/epoch_00_step_00500.pt
+        OK   avgR@10=18.47  avgR10_ref=  2.9%  avgSimΔ=-0.0359  (23.6s)
+[ 94/427] 4M_checkpoints/base_hd256_tok1_margin0.2_mw0.4_lslr0.4_lsmax116/epoch_00_step_01000.pt
+        OK   avgR@10=20.83  avgR10_ref= 15.6%  avgSimΔ=-0.0084  (20.9s)
+[ 95/427] 4M_checkpoints/base_hd256_tok1_margin0.2_mw0.4_lslr0.4_lsmax116/epoch_00_step_01500.pt
+        OK   avgR@10=22.74  avgR10_ref= 30.6%  avgSimΔ=+0.0073  (21.2s)
+[ 96/427] 4M_checkpoints/base_hd256_tok1_margin0.2_mw0.4_lslr0.4_lsmax116/epoch_00_step_02000.pt
+        OK   avgR@10=22.72  avgR10_ref= 30.8%  avgSimΔ=+0.0082  (18.9s)
+[ 97/427] 4M_checkpoints/base_hd256_tok1_margin0.2_mw0.4_lslr0.4_lsmax116/epoch_00_step_02500.pt
+        OK   avgR@10=22.77  avgR10_ref= 34.9%  avgSimΔ=+0.0126  (20.4s)
+[ 98/427] 4M_checkpoints/base_hd256_tok1_margin0.2_mw0.4_lslr0.4_lsmax116/epoch_00_step_03000.pt
+        OK   avgR@10=23.29  avgR10_ref= 38.7%  avgSimΔ=+0.0162  (19.1s)
+[ 99/427] 4M_checkpoints/base_hd256_tok1_margin0.2_mw0.4_lslr0.4_lsmax116/epoch_00_step_03500.pt
+        OK   avgR@10=23.09  avgR10_ref= 43.5%  avgSimΔ=+0.0208  (19.4s)
+[100/427] 4M_checkpoints/base_hd256_tok1_margin0.2_mw0.4_lslr0.4_lsmax116/epoch_01/checkpoint.pt
+        OK   avgR@10=23.64  avgR10_ref= 49.2%  avgSimΔ=+0.0268  (18.9s)
+        --- 100 ok, 0 failed, 0.05 ckpt/sec, ETA 111.1 min ---
+[101/427] 4M_checkpoints/base_hd256_tok1_margin0.2_mw0.4_lslr0.4_lsmax116/epoch_01_step_00500.pt
+        OK   avgR@10=23.17  avgR10_ref= 46.8%  avgSimΔ=+0.0245  (21.4s)
+[102/427] 4M_checkpoints/base_hd256_tok1_margin0.2_mw0.4_lslr0.4_lsmax116/epoch_01_step_01000.pt
+        OK   avgR@10=23.15  avgR10_ref= 46.1%  avgSimΔ=+0.0233  (19.4s)
+[103/427] 4M_checkpoints/base_hd256_tok1_margin0.2_mw0.4_lslr0.4_lsmax116/epoch_01_step_01500.pt
+        OK   avgR@10=23.63  avgR10_ref= 44.2%  avgSimΔ=+0.0215  (18.9s)
+[104/427] 4M_checkpoints/base_hd256_tok1_margin0.2_mw0.4_lslr0.4_lsmax116/epoch_01_step_02000.pt
+        OK   avgR@10=23.69  avgR10_ref= 46.1%  avgSimΔ=+0.0230  (19.1s)
+[105/427] 4M_checkpoints/base_hd256_tok1_margin0.2_mw0.4_lslr0.4_lsmax116/epoch_01_step_02500.pt
+        OK   avgR@10=23.40  avgR10_ref= 46.1%  avgSimΔ=+0.0241  (19.7s)
+[106/427] 4M_checkpoints/base_hd256_tok1_margin0.2_mw0.4_lslr0.4_lsmax116/epoch_01_step_03000.pt
+        OK   avgR@10=23.35  avgR10_ref= 47.4%  avgSimΔ=+0.0251  (20.2s)
+[107/427] 4M_checkpoints/base_hd256_tok1_margin0.2_mw0.4_lslr0.4_lsmax116/epoch_01_step_03500.pt
+        OK   avgR@10=23.85  avgR10_ref= 48.9%  avgSimΔ=+0.0264  (21.9s)
+[108/427] 4M_checkpoints/base_hd256_tok1_margin0.2_mw0.4_lslr0.4_lsmax116/epoch_02_step_00500.pt
+        OK   avgR@10=23.90  avgR10_ref= 51.2%  avgSimΔ=+0.0286  (19.1s)
+[109/427] 4M_checkpoints/base_hd256_tok1_margin0.2_mw0.4_lslr0.4_lsmax116/epoch_02_step_01000.pt
+        OK   avgR@10=23.73  avgR10_ref= 51.3%  avgSimΔ=+0.0284  (22.4s)
+[110/427] 4M_checkpoints/base_hd256_tok1_margin0.2_mw0.4_lslr0.4_lsmax116/final.pt
+        OK   avgR@10=23.15  avgR10_ref= 42.2%  avgSimΔ=+0.0197  (20.6s)
+        --- 110 ok, 0 failed, 0.05 ckpt/sec, ETA 108.0 min ---
+[111/427] 4M_checkpoints/base_hd512_tok1_margin0.1_mw0.2_lslr0.2_lsmax116/epoch_00/checkpoint.pt
+        OK   avgR@10=23.33  avgR10_ref= 74.5%  avgSimΔ=+0.0542  (18.9s)
+[112/427] 4M_checkpoints/base_hd512_tok1_margin0.1_mw0.2_lslr0.2_lsmax116/epoch_00_step_00500.pt
+        OK   avgR@10=21.49  avgR10_ref= 14.7%  avgSimΔ=-0.0097  (18.6s)
+[113/427] 4M_checkpoints/base_hd512_tok1_margin0.1_mw0.2_lslr0.2_lsmax116/epoch_00_step_01000.pt
+        OK   avgR@10=23.47  avgR10_ref= 42.6%  avgSimΔ=+0.0193  (21.3s)
+[114/427] 4M_checkpoints/base_hd512_tok1_margin0.1_mw0.2_lslr0.2_lsmax116/epoch_00_step_01500.pt
+        OK   avgR@10=24.21  avgR10_ref= 54.3%  avgSimΔ=+0.0298  (18.8s)
+[115/427] 4M_checkpoints/base_hd512_tok1_margin0.1_mw0.2_lslr0.2_lsmax116/epoch_00_step_02000.pt
+        OK   avgR@10=24.18  avgR10_ref= 64.1%  avgSimΔ=+0.0393  (19.0s)
+[116/427] 4M_checkpoints/base_hd512_tok1_margin0.1_mw0.2_lslr0.2_lsmax116/epoch_00_step_02500.pt
+        OK   avgR@10=22.60  avgR10_ref= 70.3%  avgSimΔ=+0.0458  (21.0s)
+[117/427] 4M_checkpoints/base_hd512_tok1_margin0.1_mw0.2_lslr0.2_lsmax116/epoch_00_step_03000.pt
+        OK   avgR@10=23.02  avgR10_ref= 72.3%  avgSimΔ=+0.0502  (19.0s)
+[118/427] 4M_checkpoints/base_hd512_tok1_margin0.1_mw0.2_lslr0.2_lsmax116/epoch_00_step_03500.pt
+        OK   avgR@10=23.74  avgR10_ref= 74.4%  avgSimΔ=+0.0518  (18.8s)
+[119/427] 4M_checkpoints/base_hd512_tok1_margin0.1_mw0.2_lslr0.2_lsmax116/epoch_01_step_00500.pt
+        OK   avgR@10=24.55  avgR10_ref= 73.1%  avgSimΔ=+0.0518  (19.0s)
+[120/427] 4M_checkpoints/base_hd512_tok1_margin0.1_mw0.2_lslr0.2_lsmax116/epoch_01_step_01000.pt
+        OK   avgR@10=24.56  avgR10_ref= 78.9%  avgSimΔ=+0.0584  (18.6s)
+        --- 120 ok, 0 failed, 0.05 ckpt/sec, ETA 104.5 min ---
+[121/427] 4M_checkpoints/base_hd512_tok1_margin0.1_mw0.2_lslr0.2_lsmax116/final.pt
+        OK   avgR@10=23.33  avgR10_ref= 74.5%  avgSimΔ=+0.0542  (19.0s)
+[122/427] 4M_checkpoints/base_hd512_tok1_margin0.2_mw0.4_lslr0.4_lsmax116/epoch_00/checkpoint.pt
+        OK   avgR@10=22.99  avgR10_ref= 80.7%  avgSimΔ=+0.0632  (19.5s)
+[123/427] 4M_checkpoints/base_hd512_tok1_margin0.2_mw0.4_lslr0.4_lsmax116/epoch_00_step_00500.pt
+        OK   avgR@10=21.33  avgR10_ref= 13.9%  avgSimΔ=-0.0113  (18.5s)
+[124/427] 4M_checkpoints/base_hd512_tok1_margin0.2_mw0.4_lslr0.4_lsmax116/epoch_00_step_01000.pt
+        OK   avgR@10=21.88  avgR10_ref= 39.4%  avgSimΔ=+0.0187  (19.6s)
+[125/427] 4M_checkpoints/base_hd512_tok1_margin0.2_mw0.4_lslr0.4_lsmax116/epoch_00_step_01500.pt
+        OK   avgR@10=23.17  avgR10_ref= 50.5%  avgSimΔ=+0.0272  (19.4s)
+[126/427] 4M_checkpoints/base_hd512_tok1_margin0.2_mw0.4_lslr0.4_lsmax116/epoch_00_step_02000.pt
+        OK   avgR@10=23.37  avgR10_ref= 55.8%  avgSimΔ=+0.0330  (21.4s)
+[127/427] 4M_checkpoints/base_hd512_tok1_margin0.2_mw0.4_lslr0.4_lsmax116/epoch_00_step_02500.pt
+        OK   avgR@10=22.02  avgR10_ref= 66.5%  avgSimΔ=+0.0443  (19.1s)
+[128/427] 4M_checkpoints/base_hd512_tok1_margin0.2_mw0.4_lslr0.4_lsmax116/epoch_00_step_03000.pt
+        OK   avgR@10=21.96  avgR10_ref= 73.2%  avgSimΔ=+0.0516  (19.4s)
+[129/427] 4M_checkpoints/base_hd512_tok1_margin0.2_mw0.4_lslr0.4_lsmax116/epoch_00_step_03500.pt
+        OK   avgR@10=22.55  avgR10_ref= 76.6%  avgSimΔ=+0.0585  (18.9s)
+[130/427] 4M_checkpoints/base_hd512_tok1_margin0.2_mw0.4_lslr0.4_lsmax116/epoch_01_step_00500.pt
+        OK   avgR@10=23.09  avgR10_ref= 81.6%  avgSimΔ=+0.0672  (19.1s)
+        --- 130 ok, 0 failed, 0.05 ckpt/sec, ETA 101.0 min ---
+[131/427] 4M_checkpoints/base_hd512_tok1_margin0.2_mw0.4_lslr0.4_lsmax116/final.pt
+        OK   avgR@10=22.99  avgR10_ref= 80.7%  avgSimΔ=+0.0632  (19.8s)
+[132/427] 4M_checkpoints/checkpoints_frozen_ls/base_hd256_tok1/epoch_00.pt
+        OK   avgR@10=23.18  avgR10_ref= 42.0%  avgSimΔ=+0.0196  (19.1s)
+[133/427] 4M_checkpoints/checkpoints_frozen_ls/base_hd256_tok1/epoch_00_step_00500.pt
+        OK   avgR@10=19.40  avgR10_ref=  3.4%  avgSimΔ=-0.0314  (19.0s)
+[134/427] 4M_checkpoints/checkpoints_frozen_ls/base_hd256_tok1/epoch_00_step_01000.pt
+        OK   avgR@10=21.98  avgR10_ref= 19.2%  avgSimΔ=-0.0061  (18.7s)
+[135/427] 4M_checkpoints/checkpoints_frozen_ls/base_hd256_tok1/epoch_00_step_01500.pt
+        OK   avgR@10=23.38  avgR10_ref= 27.4%  avgSimΔ=+0.0029  (19.1s)
+[136/427] 4M_checkpoints/checkpoints_frozen_ls/base_hd256_tok1/epoch_00_step_02000.pt
+        OK   avgR@10=23.29  avgR10_ref= 33.3%  avgSimΔ=+0.0095  (21.6s)
+[137/427] 4M_checkpoints/checkpoints_frozen_ls/base_hd256_tok1/epoch_00_step_02500.pt
+        OK   avgR@10=23.76  avgR10_ref= 37.4%  avgSimΔ=+0.0136  (18.9s)
+[138/427] 4M_checkpoints/checkpoints_frozen_ls/base_hd256_tok1/epoch_00_step_03000.pt
+        OK   avgR@10=23.29  avgR10_ref= 39.8%  avgSimΔ=+0.0167  (20.6s)
+[139/427] 4M_checkpoints/checkpoints_frozen_ls/base_hd256_tok1/epoch_00_step_03500.pt
+        OK   avgR@10=22.73  avgR10_ref= 41.3%  avgSimΔ=+0.0195  (18.9s)
+[140/427] 4M_checkpoints/checkpoints_frozen_ls/base_hd256_tok1/epoch_01.pt
+        OK   avgR@10=23.41  avgR10_ref= 49.2%  avgSimΔ=+0.0259  (18.9s)
+        --- 140 ok, 0 failed, 0.05 ckpt/sec, ETA 97.6 min ---
+[141/427] 4M_checkpoints/checkpoints_frozen_ls/base_hd256_tok1/epoch_01_step_00500.pt
+        OK   avgR@10=23.06  avgR10_ref= 44.2%  avgSimΔ=+0.0217  (19.2s)
+[142/427] 4M_checkpoints/checkpoints_frozen_ls/base_hd256_tok1/epoch_01_step_01000.pt
+        OK   avgR@10=23.26  avgR10_ref= 44.5%  avgSimΔ=+0.0212  (22.2s)
+[143/427] 4M_checkpoints/checkpoints_frozen_ls/base_hd256_tok1/epoch_01_step_01500.pt
+        OK   avgR@10=23.42  avgR10_ref= 47.4%  avgSimΔ=+0.0247  (19.0s)
+[144/427] 4M_checkpoints/checkpoints_frozen_ls/base_hd256_tok1/epoch_01_step_02000.pt
+        OK   avgR@10=23.55  avgR10_ref= 48.3%  avgSimΔ=+0.0251  (18.9s)
+[145/427] 4M_checkpoints/checkpoints_frozen_ls/base_hd256_tok1/epoch_01_step_02500.pt
+        OK   avgR@10=23.01  avgR10_ref= 50.3%  avgSimΔ=+0.0277  (20.0s)
+[146/427] 4M_checkpoints/checkpoints_frozen_ls/base_hd256_tok1/epoch_01_step_03000.pt
+        OK   avgR@10=22.74  avgR10_ref= 47.0%  avgSimΔ=+0.0250  (19.9s)
+[147/427] 4M_checkpoints/checkpoints_frozen_ls/base_hd256_tok1/epoch_01_step_03500.pt
+        OK   avgR@10=22.99  avgR10_ref= 53.9%  avgSimΔ=+0.0302  (18.9s)
+[148/427] 4M_checkpoints/checkpoints_frozen_ls/base_hd256_tok1/epoch_02.pt
+        OK   avgR@10=23.10  avgR10_ref= 53.6%  avgSimΔ=+0.0299  (18.9s)
+[149/427] 4M_checkpoints/checkpoints_frozen_ls/base_hd256_tok1/epoch_02_step_00500.pt
+        OK   avgR@10=23.27  avgR10_ref= 51.6%  avgSimΔ=+0.0280  (22.0s)
+[150/427] 4M_checkpoints/checkpoints_frozen_ls/base_hd256_tok1/epoch_02_step_01000.pt
+        OK   avgR@10=22.67  avgR10_ref= 52.3%  avgSimΔ=+0.0294  (20.8s)
+        --- 150 ok, 0 failed, 0.05 ckpt/sec, ETA 94.3 min ---
+[151/427] 4M_checkpoints/checkpoints_frozen_ls/base_hd256_tok1/epoch_02_step_01500.pt
+        OK   avgR@10=22.82  avgR10_ref= 51.5%  avgSimΔ=+0.0291  (19.0s)
+[152/427] 4M_checkpoints/checkpoints_frozen_ls/base_hd256_tok1/epoch_02_step_02000.pt
+        OK   avgR@10=23.00  avgR10_ref= 52.1%  avgSimΔ=+0.0293  (19.7s)
+[153/427] 4M_checkpoints/checkpoints_frozen_ls/base_hd256_tok1/epoch_02_step_02500.pt
+        OK   avgR@10=22.70  avgR10_ref= 52.1%  avgSimΔ=+0.0291  (21.4s)
+[154/427] 4M_checkpoints/checkpoints_frozen_ls/base_hd256_tok1/epoch_02_step_03000.pt
+        OK   avgR@10=22.90  avgR10_ref= 51.8%  avgSimΔ=+0.0286  (21.2s)
+[155/427] 4M_checkpoints/checkpoints_frozen_ls/base_hd256_tok1/epoch_02_step_03500.pt
+        OK   avgR@10=22.39  avgR10_ref= 55.1%  avgSimΔ=+0.0319  (19.9s)
+[156/427] 4M_checkpoints/checkpoints_frozen_ls/base_hd256_tok1/epoch_03_step_00500.pt
+        OK   avgR@10=23.07  avgR10_ref= 52.8%  avgSimΔ=+0.0300  (19.7s)
+[157/427] 4M_checkpoints/checkpoints_frozen_ls/base_hd256_tok1/epoch_03_step_01000.pt
+        OK   avgR@10=22.82  avgR10_ref= 51.6%  avgSimΔ=+0.0290  (19.0s)
+[158/427] 4M_checkpoints/checkpoints_frozen_ls/base_hd256_tok1/final.pt
+        OK   avgR@10=23.18  avgR10_ref= 42.0%  avgSimΔ=+0.0196  (21.6s)
+[159/427] 4M_checkpoints/checkpoints_trainable_ls/base_hd256_tok1/epoch_00.pt
+        OK   avgR@10=22.66  avgR10_ref= 56.9%  avgSimΔ=+0.0333  (19.2s)
+[160/427] 4M_checkpoints/checkpoints_trainable_ls/base_hd256_tok1/epoch_00_step_00500.pt
+        OK   avgR@10=19.56  avgR10_ref=  2.8%  avgSimΔ=-0.0362  (19.6s)
+        --- 160 ok, 0 failed, 0.05 ckpt/sec, ETA 91.1 min ---
+[161/427] 4M_checkpoints/checkpoints_trainable_ls/base_hd256_tok1/epoch_00_step_01000.pt
+        OK   avgR@10=21.82  avgR10_ref= 25.3%  avgSimΔ=+0.0036  (21.5s)
+[162/427] 4M_checkpoints/checkpoints_trainable_ls/base_hd256_tok1/epoch_00_step_01500.pt
+        OK   avgR@10=22.55  avgR10_ref= 38.4%  avgSimΔ=+0.0155  (20.3s)
+[163/427] 4M_checkpoints/checkpoints_trainable_ls/base_hd256_tok1/epoch_00_step_02000.pt
+        OK   avgR@10=23.03  avgR10_ref= 44.5%  avgSimΔ=+0.0207  (23.2s)
+[164/427] 4M_checkpoints/checkpoints_trainable_ls/base_hd256_tok1/epoch_00_step_02500.pt
+        OK   avgR@10=23.29  avgR10_ref= 49.6%  avgSimΔ=+0.0263  (21.3s)
+[165/427] 4M_checkpoints/checkpoints_trainable_ls/base_hd256_tok1/epoch_00_step_03000.pt
+        OK   avgR@10=22.77  avgR10_ref= 53.8%  avgSimΔ=+0.0302  (20.4s)
+[166/427] 4M_checkpoints/checkpoints_trainable_ls/base_hd256_tok1/epoch_00_step_03500.pt
+        OK   avgR@10=23.86  avgR10_ref= 54.1%  avgSimΔ=+0.0292  (20.6s)
+[167/427] 4M_checkpoints/checkpoints_trainable_ls/base_hd256_tok1/epoch_01.pt
+        OK   avgR@10=22.30  avgR10_ref= 59.6%  avgSimΔ=+0.0366  (19.0s)
+[168/427] 4M_checkpoints/checkpoints_trainable_ls/base_hd256_tok1/epoch_01_step_00500.pt
+        OK   avgR@10=22.59  avgR10_ref= 58.1%  avgSimΔ=+0.0344  (20.2s)
+[169/427] 4M_checkpoints/checkpoints_trainable_ls/base_hd256_tok1/epoch_01_step_01000.pt
+        OK   avgR@10=22.50  avgR10_ref= 61.1%  avgSimΔ=+0.0373  (19.2s)
+[170/427] 4M_checkpoints/checkpoints_trainable_ls/base_hd256_tok1/epoch_01_step_01500.pt
+        OK   avgR@10=22.82  avgR10_ref= 59.5%  avgSimΔ=+0.0349  (20.2s)
+        --- 170 ok, 0 failed, 0.05 ckpt/sec, ETA 88.0 min ---
+[171/427] 4M_checkpoints/checkpoints_trainable_ls/base_hd256_tok1/epoch_01_step_02000.pt
+        OK   avgR@10=21.58  avgR10_ref= 58.3%  avgSimΔ=+0.0350  (19.7s)
+[172/427] 4M_checkpoints/checkpoints_trainable_ls/base_hd256_tok1/epoch_01_step_02500.pt
+        OK   avgR@10=22.18  avgR10_ref= 62.9%  avgSimΔ=+0.0392  (19.1s)
+[173/427] 4M_checkpoints/checkpoints_trainable_ls/base_hd256_tok1/epoch_01_step_03000.pt
+        OK   avgR@10=22.00  avgR10_ref= 61.9%  avgSimΔ=+0.0375  (19.0s)
+[174/427] 4M_checkpoints/checkpoints_trainable_ls/base_hd256_tok1/epoch_01_step_03500.pt
+        OK   avgR@10=22.51  avgR10_ref= 55.7%  avgSimΔ=+0.0321  (19.0s)
+[175/427] 4M_checkpoints/checkpoints_trainable_ls/base_hd256_tok1/epoch_02.pt
+        OK   avgR@10=21.88  avgR10_ref= 62.5%  avgSimΔ=+0.0379  (19.0s)
+[176/427] 4M_checkpoints/checkpoints_trainable_ls/base_hd256_tok1/epoch_02_step_00500.pt
+        OK   avgR@10=21.15  avgR10_ref= 65.5%  avgSimΔ=+0.0425  (21.3s)
+[177/427] 4M_checkpoints/checkpoints_trainable_ls/base_hd256_tok1/epoch_02_step_01000.pt
+        OK   avgR@10=21.55  avgR10_ref= 65.6%  avgSimΔ=+0.0424  (19.1s)
+[178/427] 4M_checkpoints/checkpoints_trainable_ls/base_hd256_tok1/epoch_02_step_01500.pt
+        OK   avgR@10=22.46  avgR10_ref= 58.4%  avgSimΔ=+0.0355  (18.8s)
+[179/427] 4M_checkpoints/checkpoints_trainable_ls/base_hd256_tok1/epoch_02_step_02000.pt
+        OK   avgR@10=21.75  avgR10_ref= 63.3%  avgSimΔ=+0.0398  (19.4s)
+[180/427] 4M_checkpoints/checkpoints_trainable_ls/base_hd256_tok1/epoch_02_step_02500.pt
+        OK   avgR@10=22.30  avgR10_ref= 64.9%  avgSimΔ=+0.0415  (20.9s)
+        --- 180 ok, 0 failed, 0.05 ckpt/sec, ETA 84.6 min ---
+[181/427] 4M_checkpoints/checkpoints_trainable_ls/base_hd256_tok1/epoch_02_step_03000.pt
+        OK   avgR@10=21.57  avgR10_ref= 63.7%  avgSimΔ=+0.0414  (18.9s)
+[182/427] 4M_checkpoints/checkpoints_trainable_ls/base_hd256_tok1/epoch_02_step_03500.pt
+        OK   avgR@10=21.15  avgR10_ref= 65.7%  avgSimΔ=+0.0426  (19.9s)
+[183/427] 4M_checkpoints/checkpoints_trainable_ls/base_hd256_tok1/final.pt
+        OK   avgR@10=22.66  avgR10_ref= 56.9%  avgSimΔ=+0.0333  (18.9s)
+[184/427] 4M_checkpoints/checkpoints_trainable_ls_clipped/base_hd256_tok1/epoch_00.pt
+        OK   avgR@10=13.89  avgR10_ref= 85.3%  avgSimΔ=+0.0634  (19.1s)
+[185/427] 4M_checkpoints/checkpoints_trainable_ls_clipped/base_hd256_tok1/epoch_00_step_00500.pt
+        OK   avgR@10=18.82  avgR10_ref=  1.8%  avgSimΔ=-0.0338  (20.8s)
+[186/427] 4M_checkpoints/checkpoints_trainable_ls_clipped/base_hd256_tok1/epoch_00_step_01000.pt
+        OK   avgR@10=16.21  avgR10_ref= 34.1%  avgSimΔ=+0.0204  (19.1s)
+[187/427] 4M_checkpoints/checkpoints_trainable_ls_clipped/base_hd256_tok1/epoch_00_step_01500.pt
+        OK   avgR@10=16.37  avgR10_ref= 54.1%  avgSimΔ=+0.0352  (18.9s)
+[188/427] 4M_checkpoints/checkpoints_trainable_ls_clipped/base_hd256_tok1/epoch_00_step_02000.pt
+        OK   avgR@10=14.12  avgR10_ref= 73.9%  avgSimΔ=+0.0542  (19.7s)
+[189/427] 4M_checkpoints/checkpoints_trainable_ls_clipped/base_hd256_tok1/epoch_00_step_02500.pt
+        OK   avgR@10=12.36  avgR10_ref= 84.2%  avgSimΔ=+0.0639  (21.7s)
+[190/427] 4M_checkpoints/checkpoints_trainable_ls_clipped/base_hd256_tok1/epoch_00_step_03000.pt
+        OK   avgR@10=13.03  avgR10_ref= 87.5%  avgSimΔ=+0.0675  (20.8s)
+        --- 190 ok, 0 failed, 0.05 ckpt/sec, ETA 81.2 min ---
+[191/427] 4M_checkpoints/checkpoints_trainable_ls_clipped/base_hd256_tok1/epoch_00_step_03500.pt
+        OK   avgR@10=12.87  avgR10_ref= 88.4%  avgSimΔ=+0.0672  (19.2s)
+[192/427] 4M_checkpoints/checkpoints_trainable_ls_clipped/base_hd256_tok1/epoch_01_step_00500.pt
+        OK   avgR@10=13.23  avgR10_ref= 90.1%  avgSimΔ=+0.0713  (18.8s)
+[193/427] 4M_checkpoints/checkpoints_trainable_ls_clipped/base_hd256_tok1/epoch_01_step_01000.pt
+        OK   avgR@10=12.58  avgR10_ref= 88.4%  avgSimΔ=+0.0691  (18.8s)
+[194/427] 4M_checkpoints/checkpoints_trainable_ls_clipped/base_hd256_tok1/final.pt
+        OK   avgR@10=13.89  avgR10_ref= 85.3%  avgSimΔ=+0.0634  (19.0s)
+[195/427] 4M_checkpoints/vib_hd256_tok1_initbase_lslr0.2_lsmax116_vib0.0001_binit3e-06_lvbias-6.0_vwarm0.5/epoch_00/checkpoint.pt
+        OK   avgR@10=22.78  avgR10_ref= 76.4%  avgSimΔ=+0.0601  (19.0s)
+[196/427] 4M_checkpoints/vib_hd256_tok1_initbase_lslr0.2_lsmax116_vib0.0001_binit3e-06_lvbias-6.0_vwarm0.5/epoch_00_step_00500.pt
+        OK   avgR@10=25.42  avgR10_ref= 52.3%  avgSimΔ=+0.0279  (18.8s)
+[197/427] 4M_checkpoints/vib_hd256_tok1_initbase_lslr0.2_lsmax116_vib0.0001_binit3e-06_lvbias-6.0_vwarm0.5/epoch_00_step_01000.pt
+        OK   avgR@10=25.71  avgR10_ref= 54.3%  avgSimΔ=+0.0301  (18.8s)
+[198/427] 4M_checkpoints/vib_hd256_tok1_initbase_lslr0.2_lsmax116_vib0.0001_binit3e-06_lvbias-6.0_vwarm0.5/epoch_00_step_01500.pt
+        OK   avgR@10=26.05  avgR10_ref= 55.0%  avgSimΔ=+0.0313  (20.6s)
+[199/427] 4M_checkpoints/vib_hd256_tok1_initbase_lslr0.2_lsmax116_vib0.0001_binit3e-06_lvbias-6.0_vwarm0.5/epoch_00_step_02000.pt
+        OK   avgR@10=24.60  avgR10_ref= 57.9%  avgSimΔ=+0.0369  (20.2s)
+[200/427] 4M_checkpoints/vib_hd256_tok1_initbase_lslr0.2_lsmax116_vib0.0001_binit3e-06_lvbias-6.0_vwarm0.5/epoch_00_step_02500.pt
+        OK   avgR@10=24.65  avgR10_ref= 60.7%  avgSimΔ=+0.0403  (20.2s)
+        --- 200 ok, 0 failed, 0.05 ckpt/sec, ETA 77.8 min ---
+[201/427] 4M_checkpoints/vib_hd256_tok1_initbase_lslr0.2_lsmax116_vib0.0001_binit3e-06_lvbias-6.0_vwarm0.5/epoch_00_step_03000.pt
+        OK   avgR@10=24.97  avgR10_ref= 64.6%  avgSimΔ=+0.0449  (20.0s)
+[202/427] 4M_checkpoints/vib_hd256_tok1_initbase_lslr0.2_lsmax116_vib0.0001_binit3e-06_lvbias-6.0_vwarm0.5/epoch_00_step_03500.pt
+        OK   avgR@10=24.32  avgR10_ref= 68.0%  avgSimΔ=+0.0504  (19.0s)
+[203/427] 4M_checkpoints/vib_hd256_tok1_initbase_lslr0.2_lsmax116_vib0.0001_binit3e-06_lvbias-6.0_vwarm0.5/epoch_01_step_00500.pt
+        OK   avgR@10=22.44  avgR10_ref= 75.7%  avgSimΔ=+0.0615  (19.7s)
+[204/427] 4M_checkpoints/vib_hd256_tok1_initbase_lslr0.2_lsmax116_vib0.0001_binit3e-06_lvbias-6.0_vwarm0.5/final.pt
+        OK   avgR@10=22.78  avgR10_ref= 76.4%  avgSimΔ=+0.0601  (22.0s)
+[205/427] 4M_checkpoints/vib_hd256_tok1_initbase_lslr0.2_lsmax116_vib0.0001_binit3e-06_lvbias-6.0_vwarm0.5_klvw0.1_lvclip-3.0/epoch_00/checkpoint.pt
+        OK   avgR@10=25.37  avgR10_ref= 57.8%  avgSimΔ=+0.0346  (18.9s)
+[206/427] 4M_checkpoints/vib_hd256_tok1_initbase_lslr0.2_lsmax116_vib0.0001_binit3e-06_lvbias-6.0_vwarm0.5_klvw0.1_lvclip-3.0/epoch_00_step_00500.pt
+        OK   avgR@10=25.15  avgR10_ref= 53.4%  avgSimΔ=+0.0292  (18.9s)
+[207/427] 4M_checkpoints/vib_hd256_tok1_initbase_lslr0.2_lsmax116_vib0.0001_binit3e-06_lvbias-6.0_vwarm0.5_klvw0.1_lvclip-3.0/epoch_00_step_01000.pt
+        OK   avgR@10=25.38  avgR10_ref= 51.6%  avgSimΔ=+0.0276  (18.7s)
+[208/427] 4M_checkpoints/vib_hd256_tok1_initbase_lslr0.2_lsmax116_vib0.0001_binit3e-06_lvbias-6.0_vwarm0.5_klvw0.1_lvclip-3.0/epoch_00_step_01500.pt
+        OK   avgR@10=25.51  avgR10_ref= 55.7%  avgSimΔ=+0.0320  (18.9s)
+[209/427] 4M_checkpoints/vib_hd256_tok1_initbase_lslr0.2_lsmax116_vib0.0001_binit3e-06_lvbias-6.0_vwarm0.5_klvw0.1_lvclip-3.0/epoch_00_step_02000.pt
+        OK   avgR@10=25.52  avgR10_ref= 58.4%  avgSimΔ=+0.0346  (19.5s)
+[210/427] 4M_checkpoints/vib_hd256_tok1_initbase_lslr0.2_lsmax116_vib0.0001_binit3e-06_lvbias-6.0_vwarm0.5_klvw0.1_lvclip-3.0/epoch_00_step_02500.pt

@@ -1,0 +1,87 @@
+[
+  {
+    "label": "CIRR (val)",
+    "queries": 4181,
+    "gallery_size": 2297,
+    "rank_median": 25.0,
+    "rank_mean": 189.27505381487683,
+    "rank_p90": 597.0,
+    "rank_max": 2295,
+    "norm_rank_median": 0.01088850174216028,
+    "norm_rank_mean": 0.08243687012843068,
+    "confusers_median": 24.0,
+    "confusers_mean": 188.27505381487683,
+    "thr": {
+      "0.7": {
+        "mean_count": 50.84070796460177,
+        "median_count": 21.0
+      },
+      "0.8": {
+        "mean_count": 5.6936139679502515,
+        "median_count": 2.0
+      },
+      "0.9": {
+        "mean_count": 0.34872040181774694,
+        "median_count": 0.0
+      }
+    }
+  },
+  {
+    "label": "CIRCO (val, best-GT)",
+    "queries": 220,
+    "gallery_size": 123403,
+    "rank_median": 50.0,
+    "rank_mean": 388.9136363636364,
+    "rank_p90": 759.8999999999999,
+    "rank_max": 24489,
+    "norm_rank_median": 0.0004051943651743601,
+    "norm_rank_mean": 0.0031516505782019765,
+    "confusers_median": 49.0,
+    "confusers_mean": 387.9136363636364,
+    "thr": {
+      "0.7": {
+        "mean_count": 1151.0,
+        "median_count": 526.5
+      },
+      "0.8": {
+        "mean_count": 124.69545454545455,
+        "median_count": 11.0
+      },
+      "0.9": {
+        "mean_count": 4.5181818181818185,
+        "median_count": 0.0
+      }
+    }
+  },
+  {
+    "label": "Fashion-IQ (val, pooled)",
+    "queries": 6016,
+    "gallery_size": [
+      3817,
+      6346,
+      5373
+    ],
+    "rank_median": 779.0,
+    "rank_mean": 1445.2576462765958,
+    "rank_p90": 3979.0,
+    "rank_max": 6344,
+    "norm_rank_median": 0.15846770596369153,
+    "norm_rank_mean": 0.2793966719425649,
+    "confusers_median": 778.0,
+    "confusers_mean": 1444.2576462765958,
+    "thr": {
+      "0.7": {
+        "mean_count": 2553.2159242021276,
+        "median_count": 3301.0
+      },
+      "0.8": {
+        "mean_count": 1058.2300531914893,
+        "median_count": 1004.5
+      },
+      "0.9": {
+        "mean_count": 36.581449468085104,
+        "median_count": 5.0
+      }
+    }
+  }
+]
