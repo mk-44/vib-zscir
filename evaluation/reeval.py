@@ -147,8 +147,16 @@ KNOWN = [
      'fashion_ref': (0.069583, 0.182814, 0.249871, 0.451093)},
     {'label': 'vib_headline', 'sha256': 'cfbab52c8b00dff9f5ee0c3e64c5ea43607cf36bf038ab93a622e2865fb7b784',
      'path': CK / 'vib_hd256_tok1_lslr0.2_lsmax116_vib0.0001' / 'epoch_01_step_01500.pt',
-     'paper': 'VIB beta=0.1, Tab. 2 / S8: F 22.2, CIRCO val 12.38, test 13.22',
-     'fashion_r10_one_decimal': 22.2},   # only the paper's one-decimal value survives
+     'paper': 'VIB beta=0.1, sec/4_experiment.tex: F 22.15 / 40.76, CIRCO val 12.38, test 13.22',
+     # No exact record survives, only printed values, and each must print the same now: the paper's
+     # two-decimal avg R@10 / R@50 (sec/4_experiment.tex, "Our VIB" row), and the 16 one-decimal values
+     # of the original eval_fashion.py run (keep_rest.zip: fashion_eval_logs/
+     # vib_hd256_tok1_lslr0.2_lsmax116_vib0.0001__epoch_01_step_01500.log). Where the paper rounds this
+     # model to one decimal it writes 22.2 (22.15 rounded up); the exact value rounds to 22.1, as that log
+     # printed. all_fashion_metrics.json's 22.18 is a different evaluator (its "fast path").
+     'fashion_paper_2dp': {'10': '22.15', '50': '40.76'},
+     'fashion_log_1dp': {'dress': ('3.4', '11.6', '16.9', '36.4'), 'shirt': ('8.3', '19.3', '25.4', '41.5'),
+                         'toptee': ('7.2', '17.7', '24.2', '44.4'), 'avg': ('6.3', '16.2', '22.1', '40.8')}},
 ]
 EXTRAS = [
     {'label': 'run2_e02s0500', 'sha256': '0f62fec180c372d7d59f85398512fea1b651806917b6d5bdc9387a8272d81bd9',
@@ -617,6 +625,16 @@ def compare_fashion(rec, ref, tol):
     return ok, exact, deltas
 
 
+def compare_fashion_printed(rec, e):
+    """Fashion-IQ values that survive only as printed text, against what this record prints at the same
+    precision: the paper's two-decimal averages and the original log's one-decimal values."""
+    rows = [('paper', f'avg R@{k}', ref, f'{100 * rec["avg"][k]:.2f}') for k, ref in e['fashion_paper_2dp'].items()]
+    for cat, refs in e['fashion_log_1dp'].items():
+        vals = rec['avg'] if cat == 'avg' else rec['per_category'][cat]
+        rows += [('original log', f'{cat} R@{k}', ref, f'{100 * vals[k]:.1f}') for k, ref in zip(KS, refs)]
+    return [dict(zip(('source', 'value', 'reference', 'now'), r)) for r in rows]
+
+
 def fmt_fashion_row(name, rec, ref, deltas, status):
     cells = '  '.join(f'R@{k} {100*r:6.3f}->{100*rec["avg"][k]:6.3f} ({100*deltas[k]:+.3f})'
                       for k, r in zip(KS, ref))
@@ -663,11 +681,17 @@ def check_known(e, out_dir, args):
         f_line = fmt_fashion_row('Fashion-IQ (training)', f, e['fashion_ref'], deltas,
                                  'exact' if exact else ('ok' if ok_f else 'FAIL'))
     else:
-        r10 = 100 * f['avg']['10']
-        ok_f = abs(r10 - e['fashion_r10_one_decimal']) <= 0.05 + 1e-9
-        fashion = {'reference_r10_one_decimal': e['fashion_r10_one_decimal'], 'now_r10': r10}
-        f_line = (f'  Fashion-IQ R@10 paper {e["fashion_r10_one_decimal"]:.1f}  now {r10:.2f}  '
-                  f'{"ok" if ok_f else "FAIL"} (one-decimal value)')
+        rows = compare_fashion_printed(f, e)
+        bad = [r for r in rows if r['now'] != r['reference']]
+        ok_f = not bad
+        fashion = {'reference_paper_2dp': e['fashion_paper_2dp'], 'reference_log_1dp': e['fashion_log_1dp'],
+                   'now': f['avg'], 'now_per_category': f['per_category'], 'rows': rows, 'mismatches': bad}
+        paper = [r for r in rows if r['source'] == 'paper']
+        logged = [r for r in rows if r['source'] == 'original log']
+        f_line = (f'  Fashion-IQ paper (2 dp) ' + ', '.join(f'{r["value"]} {r["reference"]} -> {r["now"]}' for r in paper)
+                  + f'; original log (1 dp) {sum(r["now"] == r["reference"] for r in logged)}/{len(logged)} '
+                  f'values identical  {"ok" if ok_f else "FAIL"}')
+        f_line += ''.join(f'\n    differs: {r["source"]} {r["value"]} {r["reference"]} -> now {r["now"]}' for r in bad)
     t = registry(out_dir)[f'{key}__regenerated__submission.json']['comparison']
     ok_t = test_file_ok(t, args.test_query_tol)
     ok_pn = c['pseudo_norm_in_model'] == 0.0
