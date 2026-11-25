@@ -19,13 +19,16 @@ What it runs
     compute_metrics. Dump: the model's own pieces (clip.encoder_image_unnorm, mapper, merger, pseudo_norm,
     _build_token_sequence, clip.forward_text_transform). Composed queries keep the canonical batch structure
     (CIRCO one query at a time, as eval_circo_v2 / eval_circo_test; Fashion-IQ in eval_fashion's batches), so the
-    self-check expects exact agreement with the canonical results.
+    self-check expects exact agreement with the canonical results (Fashion-IQ references made on the earlier
+    machine may differ by near-tie flips, see FIQ_QUERY_TOL).
 
 Steps (a failed preflight or gate stops the run; after that every item runs and failures are recorded)
     0 preflight  packages and versions, GPU, data, the previous runs' results and stored metrics, every checkpoint:
                  present, sha256 equal to the archived copy, mapper type / tokens / merger / pseudo_norm as expected
-    1 gate       baseline e02s3000 and VIB e01s1500 reproduce results/reeval_2026_11 exactly: every CIRCO-val query
-                 (AP and recall at every K, reference rank, best-GT rank) and Fashion-IQ at 6 dp
+    1 gate       baseline e02s3000 and VIB e01s1500 reproduce results/reeval_2026_11: every CIRCO-val query exactly
+                 (AP and recall at every K, reference rank, best-GT rank); Fashion-IQ within FIQ_QUERY_TOL queries per
+                 category at every K (it encodes its reference images on the GPU in every run, and another machine's
+                 rounding can reorder a near-tie at a rank cut; CIRCO uses cached image features)
     2 canonical  CIRCO val + Fashion-IQ (+ CIRCO test file) for: capped tau e00s1500 (its test file must equal the
                  add-on's, which was uploaded); beta=0.5 e01s2500 and beta=1.0 e01s1000 (epoch-1 resumed with KL
                  weight 5e-4 / 1e-3 under the averaged-KL code; new test files); KL_mu-only e01s1000 (test recheck);
@@ -113,7 +116,9 @@ SELF_N        = 16       # encode_from_vraw vs model.encode_query on this many C
 SELF_EQ_TOL   = 1e-5     # max |encode_from_vraw - encode_query|
 SELF_MAP_TOL  = 5e-4     # |delta CIRCO-val mAP@10| (fraction, = 0.05 points)
 SELF_REF10_TOL = 1       # |delta Ref@10| in queries
-SELF_FIQ_TOL  = 1e-3     # |delta Fashion-IQ R@10| (fraction) per category and averaged
+FIQ_N         = {'dress': 2017, 'shirt': 2038, 'toptee': 1961}   # Fashion-IQ val queries per category
+FIQ_QUERY_TOL = 2        # Fashion-IQ queries per category (gate: every K; dump self-check: R@10) that may differ from a
+                         # reference made on the earlier machine: near-tie flips at a rank cut, 0.1 points
 ATTN_TOL      = 1e-5     # attention-capturing pass vs normal pass, max |delta q|
 PROBE_TOL     = 1.5e-4   # stored probe values are rounded to 4 dp
 REIMPL_RTOL   = 1e-6     # this file's token / sigma / KL formulas vs the probe scripts' on identical inputs
@@ -426,19 +431,37 @@ def compare_lists(sub, ref_path):
             'different_sets': len(common) - identical - same_set}
 
 
+def fiq_query_diff(cat, now, ref):
+    """Difference in Fashion-IQ hits (queries) between two recall fractions of one category."""
+    return round(now * FIQ_N[cat]) - round(ref * FIQ_N[cat])
+
+
 def compare_fashion_recalls(now, ref):
-    """Per-category Fashion-IQ recalls ({cat: {'1','5','10','50'}}) against a reeval.py fashion_val record."""
+    """Per-category Fashion-IQ recalls ({cat: {'1','5','10','50'}}) against a reeval.py fashion_val record.
+    ok: R@10 within FIQ_QUERY_TOL queries in every category; 'exact' says whether every value is identical."""
     rows = []
     for cat in R.FIQ_CATS:
         for k in R.KS:
             a, b = now[cat][k], ref['per_category'][cat][k]
-            rows.append({'value': f'{cat} R@{k}', 'now': a, 'reference': b, 'same': round(a, 6) == round(b, 6)})
+            rows.append({'value': f'{cat} R@{k}', 'k': k, 'now': a, 'reference': b, 'same': round(a, 6) == round(b, 6),
+                         'query_diff': fiq_query_diff(cat, a, b)})
     avg_now = mean([now[c]['10'] for c in R.FIQ_CATS])
     avg_ref = mean([ref['per_category'][c]['10'] for c in R.FIQ_CATS])
-    ok = (all(abs(now[c]['10'] - ref['per_category'][c]['10']) <= SELF_FIQ_TOL for c in R.FIQ_CATS)
-          and abs(avg_now - avg_ref) <= SELF_FIQ_TOL)
+    ok = all(abs(r['query_diff']) <= FIQ_QUERY_TOL for r in rows if r['k'] == '10')
     return {'ok': ok, 'exact': all(r['same'] for r in rows), 'avg_r10_now': avg_now, 'avg_r10_reference': avg_ref,
-            'rows': rows}
+            'query_tol': FIQ_QUERY_TOL, 'rows': rows}
+
+
+def gate_fashion_check(f, ref_f):
+    """The gate's Fashion-IQ part: every category and K within FIQ_QUERY_TOL queries of reeval_2026_11 (each row also
+    says whether its 6-dp value is identical; the avg rows follow from the categories)."""
+    _, rows = A.fashion_check(f, dict(ref_f['per_category'], avg=ref_f['avg']))
+    for r in rows:
+        cat = r['value'].split()[0]
+        if cat in FIQ_N:
+            r['query_diff'] = fiq_query_diff(cat, r['now'], r['reference'])
+    ok = all(abs(r['query_diff']) <= FIQ_QUERY_TOL for r in rows if 'query_diff' in r)
+    return ok, rows
 
 
 def validate_submission(path):
@@ -682,23 +705,27 @@ def gate_item(label, out, args, cfg):
     ref_f = R.read_json(R.fiq_file(REEVAL_OUT, key))
     pq = compare_perquery(c['v2']['per_query'], ref_c['v2']['per_query'])
     agg = {k: c['v2'][k] == ref_c['v2'][k] for k in ('map_atk', 'recall_atk', 'semantic_map_at10', 'stickiness')}
-    ok_f, rows = A.fashion_check(f, dict(ref_f['per_category'], avg=ref_f['avg']))
+    ok_f, rows = gate_fashion_check(f, ref_f)
     checks = {
         'circo_val_per_query': {'ok': pq['exact'], **pq},
         'circo_val_map_recall': {'ok': agg['map_atk'] and agg['recall_atk'], 'same': agg},
         'tau': {'ok': c['tau'] == ref_c['tau'], 'now': c['tau'], 'reference': ref_c['tau']},
         'pseudo_norm_off': {'ok': c['pseudo_norm_in_model'] == 0.0, 'now': c['pseudo_norm_in_model']},
-        'fashion_6dp': {'ok': ok_f, 'rows': rows},
+        'fashion': {'ok': ok_f, 'exact': all(r['same'] for r in rows), 'query_tol': FIQ_QUERY_TOL, 'rows': rows},
     }
     ok = all(v['ok'] for v in checks.values())
     R.log(f'  CIRCO val vs reeval_2026_11: {pq["n_common"]}/{pq["n_reference"]} queries, mismatches '
           f'{sum(pq["mismatch_counts"].values())} (AP/recall at all K, reference and best-GT ranks), max |d sim_ref| '
           f'{pq["max_abs_diff_sim_ref"]}  {"ok" if checks["circo_val_per_query"]["ok"] else "DIFFERS"}')
-    R.log(f'  Fashion-IQ vs reeval_2026_11: {sum(r["same"] for r in rows)}/{len(rows)} values identical at 6 dp  '
+    worst = max(abs(r['query_diff']) for r in rows if 'query_diff' in r)
+    R.log(f'  Fashion-IQ vs reeval_2026_11: {sum(r["same"] for r in rows)}/{len(rows)} values identical at 6 dp; '
+          f'largest change {worst} quer{"y" if worst == 1 else "ies"} in a category (allowed {FIQ_QUERY_TOL})  '
           f'{"ok" if ok_f else "DIFFERS"}')
     for r in rows:
         if not r['same']:
-            R.log(f'    differs: {r["value"]} {r["reference"]:.6f} -> now {r["now"]:.6f}')
+            qd = r.get('query_diff')
+            note = '' if qd is None else f'  ({qd:+d} quer{"y" if abs(qd) == 1 else "ies"})'
+            R.log(f'    differs: {r["value"]} {r["reference"]:.6f} -> now {r["now"]:.6f}{note}')
     return {'checkpoint': str(ckpt), 'key': key, 'sha256': CK[label]['sha256'], 'numbers': A.numbers(c, f),
             'reference': {'circo_val': str(R.val_file(REEVAL_OUT, key)), 'fashion': str(R.fiq_file(REEVAL_OUT, key))},
             'checks': checks, 'ok': ok}
@@ -1024,7 +1051,8 @@ def s13_item(out, args):
 # ---------------------------------------------------------------------------
 # Step 8: summary and the paper table
 # ---------------------------------------------------------------------------
-TABLE_GROUPS = (('gate', 'Gate: reproduced exactly from reeval_2026_11'),
+TABLE_GROUPS = (('gate', 'Gate: reproduced from reeval_2026_11 (CIRCO exactly, Fashion-IQ within '
+                         f'{FIQ_QUERY_TOL} queries per category)'),
                 ('tau', 'Table 1 tau row at its val argmax'),
                 ('beta_resumed', 'beta rows at best val: ' + _RESUMED.format(w='5e-4 / 1e-3') + '\n  ' + RESUMED_NOTE),
                 ('klmu', 'KL_mu-only ablation'),
@@ -1203,7 +1231,8 @@ def main():
     recs, labels = {}, []
 
     # ---- Step 1 -------------------------------------------------------------
-    R.banner('Step 1/8  Gate: baseline and VIB must reproduce reeval_2026_11 exactly')
+    R.banner('Step 1/8  Gate: baseline and VIB must reproduce reeval_2026_11 (CIRCO exactly, Fashion-IQ within '
+             f'{FIQ_QUERY_TOL} queries per category)')
     for label in GATE_MODELS:
         run_item(out, f'gate_{label}', CK[label]['title'], lambda label=label: gate_item(label, out, args, cfg), recs,
                  resume=False)
