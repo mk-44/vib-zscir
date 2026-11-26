@@ -27,8 +27,8 @@ Steps (a failed preflight or gate stops the run; after that every item runs and 
                  present, sha256 equal to the archived copy, mapper type / tokens / merger / pseudo_norm as expected
     1 gate       baseline e02s3000 and VIB e01s1500 reproduce results/reeval_2026_11: every CIRCO-val query exactly
                  (AP and recall at every K, reference rank, best-GT rank); Fashion-IQ within FIQ_QUERY_TOL queries per
-                 category at every K (it encodes its reference images on the GPU in every run, and another machine's
-                 rounding can reorder a near-tie at a rank cut; CIRCO uses cached image features)
+                 category at every K (Fashion-IQ encodes in GPU batches of 1024, scores on the CPU and has duplicate
+                 gallery images, so exact ties can break differently on another host; CIRCO runs one query on the GPU)
     2 canonical  CIRCO val + Fashion-IQ (+ CIRCO test file) for: capped tau e00s1500 (its test file must equal the
                  add-on's, which was uploaded); beta=0.5 e01s2500 and beta=1.0 e01s1000 (epoch-1 resumed with KL
                  weight 5e-4 / 1e-3 under the averaged-KL code; new test files); KL_mu-only e01s1000 (test recheck);
